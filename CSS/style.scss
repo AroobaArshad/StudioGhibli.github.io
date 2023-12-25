@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;700&family=Rubik+Doodle+Shadow&display=swap');
+
+$mycolor : pink;
+
+//font-family: 'Rubik doodle shadow', cursive;
+//font-family: 'Caveat', cursive;
+
+* {
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    padding: 0;
+    font-family: 'Rubik doodle shadow', cursive;
+}
+
+body {
+    background-color: rgb(237, 237, 237);
+}
+
+header {
+    background-color: $mycolor;
+    width: 92%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    border-radius: 0 0 10px 10px;
+    margin: 0 auto;
+}
+
+.logo img{
+    margin: 10px;
+    width: 150px;
+    height: 70px;
+    background-color: $mycolor;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li a {
+    color: black;
+    display: block;
+    margin: 0 6px;
+    font-weight: 600;
+    padding: 10px 20px;
+    transition: 0.2s;
+    border-radius: 30px;
+    font-size: 18px;
+    &:hover {
+        background-color: rgb(247, 219, 223);
+    }
+}
+
+nav ul li a.active {
+    background-color: palevioletred;
+    color: #fff;
+}
+
+nav .logo{
+    display: none;
+}
+
+.lines {
+    display: none;
+    height: fit-content;
+    cursor: pointer;
+    padding: 3px 8px;
+    border-radius: 5px;
+    transition: 0.2s;
+
+    &:hover {
+        background: rgb(247, 219, 223);
+    }
+
+    div {
+        width: 30px;
+        height: 3px;
+        background: mediumvioletred;
+        margin: 6px 0;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    header {
+        width: 90%;
+        padding: 0 20px;
+    }
+
+    nav {
+        position: absolute;
+        left: -300px;
+        top: 0;
+        z-index: 99;
+        width: 280px;
+        height: 100vh;
+        background-color: pink;
+        transition: 0.2s;
+        box-shadow: 2px 0 20px 0 rgba (0, 0, 0, 0.05);
+    }
+
+    #check_nav:checked ~ nav {
+        left: 0;
+    }
+
+    nav .logo {
+        display: block;
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+    }
+
+    nav ul {
+        display: block;
+        padding: 0 5px;
+        margin-top: 50px;
+    }
+
+    nav ul li a {
+        margin-bottom: 20px;
+        padding: 15px 25px;
+        border-radius: 5px;
+    }
+
+    .lines {
+        display: block;
+    }
+}
