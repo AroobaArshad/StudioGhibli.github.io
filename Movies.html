@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./CSS/style2.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Ghibli Movies</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src = "./Images/Studio_Ghibli.svg" alt="">
+        </div>
+        <input type = "checkbox" id = "check_nav" hidden>
+        <nav>
+            <div class="logo">
+                <img src = "./Images/Studio_Ghibli.svg" alt="">
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="" class = "active">Movies</a></li>
+                <li><a href="">Creators</a></li>
+                <li><a href="">Media</a></li>
+            </ul>
+        </nav>
+        <label for="check_nav" class="lines">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+    </header>
+
+    <div class="slider">
+        <div class="list">
+            <div class="item active">
+                <img src="./Images/kiki_.jpg" alt="">
+                <div class="content">
+                    <p>Top Ghibli Movies</p>
+                    <h2>Kiki's Delivery Service</h2>
+                    <p>13-year-old Kiki moves to a seaside town with her talking cat, Jiji,
+                     to spend a year alone, in accordance with her village's tradition for witches in training.
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="./Images/mononoke-hime.jpg" alt="">
+                <div class="content">
+                    <p>Top Ghibli Movies</p>
+                    <h2>Princess Mononoke</h2>
+                    <p>The protagonist, young Ashitaka - infected by an animal attack,
+                     seeks a cure from the deer-like god Shishigami.
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="./Images/ponyo-h6569orw891unj3x.jpg" alt="">
+                <div class="content">
+                    <p>Top Ghibli Movies</p>
+                    <h2>Ponyo</h2>
+                    <p>During a forbidden excursion to see the surface world, a goldfish princess encounters
+                     a human boy named Sosuke, who gives her the name Ponyo.
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="./Images/my-neighbor-totoro-poster.png" alt="">
+                <div class="content">
+                    <p>Top Ghibli Movies</p>
+                    <h2>My Neighbour Totoro</h2>
+                    <p>Satsuke and her younger sister Mei settle into an old country house with their
+                     father and wait for their mother to recover from an illness in an area hospital.
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="./Images/heart.jpg" alt="">
+                <div class="content">
+                    <p>Top Ghibli Movies</p>
+                    <h2>Whisper Of The Heart</h2>
+                    <p>This animated film follows Shizuku, an inquisitive young girl and a voracious reader,
+                     who longs to be a writer when she grows up.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn">
+            <button id="back"><</button>
+            <button id="next">></button>
+        </div>
+
+        <div class="slides">
+            <div class="item active">
+                <img src="./Images/kiki.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="./Images/mononoke.jpeg" alt="">
+            </div>
+            <div class="item">
+                <img src="./Images/ponyo.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="./Images/totoro.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="./Images/whisper.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <script src="./JavaScript/Movies.js"></script>
+</body>
+</html>

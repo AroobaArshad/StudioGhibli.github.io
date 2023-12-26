@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@400;700&family=Caveat:wght@400;500;700&family=Rubik+Doodle+Shadow&display=swap');
 $mycolor : skyblue;
 $activecolor : rgb(61, 153, 189); 
+$hovercolor : rgb(191, 229, 245);
 
 //font-family: 'Rubik doodle shadow', cursive;
 //font-family: 'Caveat', cursive;
@@ -52,7 +53,7 @@ nav ul li a {
     border-radius: 30px;
     font-size: 18px;
     &:hover {
-        background-color: rgb(247, 219, 223);
+        background-color: $hovercolor;
     }
 }
 
@@ -74,7 +75,7 @@ nav .logo{
     transition: 0.2s;
 
     &:hover {
-        background: rgb(247, 219, 223);
+        background: $hovercolor;
     }
 
     div {
