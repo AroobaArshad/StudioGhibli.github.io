@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;700&family=Rubik+Doodle+Shadow&display=swap');
-
-$mycolor : pink;
+@import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@400;700&family=Caveat:wght@400;500;700&family=Rubik+Doodle+Shadow&display=swap');
+$mycolor : skyblue;
+$activecolor : rgb(61, 153, 189); 
 
 //font-family: 'Rubik doodle shadow', cursive;
 //font-family: 'Caveat', cursive;
@@ -11,15 +11,17 @@ $mycolor : pink;
     text-decoration: none;
     padding: 0;
     font-family: 'Rubik doodle shadow', cursive;
+    box-sizing: border-box;
 }
 
 body {
     background-color: rgb(237, 237, 237);
+    height: 100%;
 }
 
 header {
     background-color: $mycolor;
-    width: 92%;
+    width: 100%;
     height: 100px;
     display: flex;
     align-items: center;
@@ -55,7 +57,7 @@ nav ul li a {
 }
 
 nav ul li a.active {
-    background-color: palevioletred;
+    background-color: $activecolor;
     color: #fff;
 }
 
@@ -78,14 +80,29 @@ nav .logo{
     div {
         width: 30px;
         height: 3px;
-        background: mediumvioletred;
+        background: rgb(13, 126, 171);
         margin: 6px 0;
     }
 }
 
+/* Hide all images initially */
+.slideshow-container img {
+    display: none;
+}
+
+/* Display the first image */
+.slideshow-container img:first-child {
+    display: block;
+}
+
+img {
+    width: 100%;
+    height: 50vw;
+}
+
 @media screen and (max-width: 1000px){
     header {
-        width: 90%;
+        width: 100%;
         padding: 0 20px;
     }
 
@@ -96,7 +113,7 @@ nav .logo{
         z-index: 99;
         width: 280px;
         height: 100vh;
-        background-color: pink;
+        background-color: $mycolor;
         transition: 0.2s;
         box-shadow: 2px 0 20px 0 rgba(0, 0, 0, 0.05);
     }
