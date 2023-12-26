@@ -18,7 +18,7 @@
             </div>
             <ul>
                 <li><a href="" class = "active">Home</a></li>
-                <li><a href="">Movies</a></li>
+                <li><a href="Movies.html">Movies</a></li>
                 <li><a href="">Creators</a></li>
                 <li><a href="">Media</a></li>
             </ul>
@@ -29,6 +29,31 @@
             <div></div>
         </label>
     </header>
+    
+    <main>
+        <div class="slideshow-container" style="width: 100%; height: 80%;">
+            <img src="./Images/Pic3.png" alt="Image 1">
+            <img src="./Images/Pic2.png" alt="Image 2">
+            <img src="./Images/Pic1.png" alt="Image 3">
+            <img src="./Images/Pic4.png" alt="Image 4">
+        </div>
+    </main>
 
+    <script>
+        // Get all the images within the slideshow container
+    const slides = document.querySelectorAll('.slideshow-container img');
+    let currentSlideIndex = 0;
+
+    // Function to show the next slide
+    function showNextSlide() {
+        slides[currentSlideIndex].style.display = 'none';
+        currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+        slides[currentSlideIndex].style.display = 'block';
+    }
+
+    // Automatically transition to the next slide every 5 seconds (adjust as needed)
+    setInterval(showNextSlide, 5700);
+
+    </script>
 </body>
 </html>
