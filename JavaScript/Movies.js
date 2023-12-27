@@ -42,3 +42,18 @@ slides.forEach((slide, index) => {
         showSlider();
     });
 });
+
+// Basic setup for the lenis smooth scrolling library
+// Comes directly from their documentation
+const lenis = new Lenis()
+
+lenis.on('scroll', (e) => {
+  console.log(e)
+})
+
+function raf(time) {
+  lenis.raf(time)
+  requestAnimationFrame(raf)
+}
+
+requestAnimationFrame(raf)
