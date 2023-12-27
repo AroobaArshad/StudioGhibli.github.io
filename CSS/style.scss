@@ -21,6 +21,8 @@ body {
 }
 
 header {
+    position: fixed;
+    top: 0;
     background-color: $mycolor;
     width: 100%;
     height: 100px;
@@ -30,6 +32,7 @@ header {
     padding: 0 40px;
     border-radius: 0 0 10px 10px;
     margin: 0 auto;
+    z-index: 1000;
 }
 
 .logo img{
@@ -86,21 +89,6 @@ nav .logo{
     }
 }
 
-/* Hide all images initially */
-.slideshow-container img {
-    display: none;
-}
-
-/* Display the first image */
-.slideshow-container img:first-child {
-    display: block;
-}
-
-img {
-    width: 100%;
-    height: 50vw;
-}
-
 @media screen and (max-width: 1000px){
     header {
         width: 100%;
@@ -145,4 +133,23 @@ img {
     .lines {
         display: block;
     }
+}
+
+.slideshow-container{
+    margin-top: 90px;
+}
+
+/* Hide all images initially */
+.slideshow-container img {
+    display: none;
+}
+
+/* Display the first image */
+.slideshow-container img:first-child {
+    display: block;
+}
+
+img {
+    width: 100%;
+    height: 50vw;
 }

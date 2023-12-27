@@ -39,6 +39,7 @@
         </div>
     </main>
 
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script> 
     <script>
         // Get all the images within the slideshow container
     const slides = document.querySelectorAll('.slideshow-container img');
@@ -53,6 +54,21 @@
 
     // Automatically transition to the next slide every 5 seconds (adjust as needed)
     setInterval(showNextSlide, 5700);
+
+    // Basic setup for the lenis smooth scrolling library
+    // Comes directly from their documentation
+    const lenis = new Lenis()
+
+    lenis.on('scroll', (e) => {
+    console.log(e)
+    })
+
+    function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
 
     </script>
 </body>
