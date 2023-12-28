@@ -133,6 +133,7 @@ nav .logo{
     .lines {
         display: block;
     }
+
 }
 
 .slider {
@@ -281,24 +282,195 @@ nav .logo{
     filter: brightness(1.3);
 }
 
+
+
+.display {
+    padding-top: 50px;
+    padding-bottom: 100px;
+    width: 100%;
+    background: rgb(192, 240, 255);
+}
+
+.reveal-type {
+    font-size: 50px;
+    text-align: center;
+}
+
+.movies {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.movie-card {
+    width: 250px;
+    height: 390px;
+    border-radius: 20px;
+    border: 8px solid #fff;
+    position: relative;
+    overflow: hidden;
+    margin: 20px;
+}
+
+.movie-card:hover .card-content{
+    right: 0;
+}
+
+.cardImg {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+.card-content {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: -100%;
+    position: absolute;
+    background: #1f3d4738;
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    color: #fff;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 1.5s;
+}
+
+.movie-name {
+    font-size: 30px;
+    color: #fff;
+}
+
+.movie-info {
+    font-size: 15px;
+    line-height: 20px;
+    margin: 30px 0;
+}
+
+.movie-btn {
+    color: #0c3745;
+    background: $hovercolor;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    width: 110px;
+
+    &:hover{
+        background: $activecolor;
+        color: #fff;
+    }
+}
+
 @media screen and (max-width: 680px) {
     .slides {
         justify-content: start;
         bottom: 1%;
     }
 
-    .slider .item .list .content h2 {
+    .slider .list .item .content h2 {
         font-size: 40px;
     }
 
     .btn {
         top: 10%;
     }
+
+    .reveal-type {
+        font-size: 40px;
+    }
 }
 
-.display {
+/************************************/
+/*********Styling the Footer*********/
+/************************************/
+
+footer{
+    position: relative;
     width: 100%;
-    height: 600px;
-    background: rgb(192, 240, 255);
+    height: 66vh;
+    background: linear-gradient(to right, $activecolor, $mycolor);
+    overflow: hidden;
 }
 
+/*Positioning the section that contains logos and their links*/
+.wrapper {
+    margin-left: 50px;
+    margin-top: 35px;
+}
+
+
+.weee:hover {
+    color: black;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: all 0.30s ease-out;
+}
+
+/*This is the CSS for the wavy animation at the end*/
+/*I have used a background image and positioned it accordingly while adding the respective effects needed*/
+footer .air{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background: url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png);
+    background-size: 1000px 100px
+}
+
+/*There are a total of four waves and they are arranged seperately*/
+/*They all have different z-indexes, opacities, animation time-delay and positions*/
+footer .air.air1{
+    animation: wave 30s linear infinite;
+    z-index: 1000;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0;
+}
+
+footer .air.air2{
+    animation: wave2 15s linear infinite;
+    z-index: 999;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 10px;
+}
+
+footer .air.air3{
+    animation: wave 30s linear infinite;
+    z-index: 998;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 15px;
+}
+
+footer .air.air4{
+    animation: wave2 5s linear infinite;
+    z-index: 997;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom: 20px;
+}
+
+/*Adding the necessary keyframes for the animation*/
+@keyframes wave{
+0%{
+  background-position-x: 0px; 
+}
+100%{
+  background-position-x: 1000px; 
+}
+}
+@keyframes wave2{
+0%{
+  background-position-x: 0px; 
+}
+100%{
+  background-position-x: -1000px; 
+}
+}
