@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@400;700&family=Caveat:wght@400;500;700&family=Rubik+Doodle+Shadow&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kalnia:wght@100;200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 $mycolor : skyblue;
 $activecolor : rgb(61, 153, 189); 
 $hovercolor : rgb(191, 229, 245);
@@ -11,13 +11,13 @@ $hovercolor : rgb(191, 229, 245);
     list-style: none;
     text-decoration: none;
     padding: 0;
-    font-family: 'Rubik doodle shadow', cursive;
     box-sizing: border-box;
 }
 
 body {
     background-color: rgb(237, 237, 237);
     height: 100%;
+    font-family: Poppins;
 }
 
 header {

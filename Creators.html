@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./CSS/style3.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src = "./Images/Studio_Ghibli.svg" alt="">
+        </div>
+        <input type = "checkbox" id = "check_nav" hidden>
+        <nav>
+            <div class="logo">
+                <img src = "./Images/Studio_Ghibli.svg" alt="">
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Movies.html">Movies</a></li>
+                <li><a href="" class = "active">Creators</a></li>
+                <li><a href="">Media</a></li>
+            </ul>
+        </nav>
+        <label for="check_nav" class="lines">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+    </header>
+
+    <main>
+        <div class="intro">
+            <h1 data-splitting>Meet the amazing creators behind <br> this magical studio</h1>
+        </div>
+
+        <section class="main-section" data-scroll>
+            <picture class="fig">
+                <source srcset="./Images/studiocreators.png" media="(max-width: 600px)">
+                <source srcset="./Images/studiocreators.png" media="(max-width: 900px)">
+                <source srcset="./Images/studio-ghibli-documentary-transformed.jpeg" class="imgg">
+                <img src="./Images/studio-ghibli-documentary-transformed.jpeg" alt="Bees" class="imgg">
+            </picture>
+
+            <div class="content">
+                <header class="content-header">
+                    <div class="subheading">Studio Ghibli Founders</div>
+                    <h2 class="main-heading">Studio Ghibli Inc.</h2>
+                </header>
+                
+                <p class="para">Studio Ghibli was founded on June 15, 1985, by the directors Hayao Miyazaki and Isao Takahata and producer Toshio Suzuki, after acquiring Topcraft's assets.
+                 The studio has also collaborated with video game studios on the visual development of several games. Studio Ghibli, Inc.</p>
+            </div>
+        </section>
+
+        <section class="main-section" data-scroll>
+            <picture class="fig">
+                <source srcset="./Images/Hayao_Miyazaki_cropped.jpg" media="(max-width: 600px)">
+                <source srcset="./Images/Hayao_Miyazaki_cropped.jpg" media="(max-width: 900px)">
+                <source srcset="./Images/hayao-miyazaki.webp" class="imgg">
+                <img src="./Images/hayao-miyazaki.webp" alt="Bees" class="imgg">
+            </picture>
+
+            <div class="content">
+                <header class="content-header">
+                    <div class="subheading">Studio Ghibli Founder</div>
+                    <h2 class="main-heading">Hayao Miyazaki</h2>
+                </header>
+                
+                <p class="para">Hayao Miyazaki is a Japanese animator, filmmaker, and manga artist. A co-founder of Studio Ghibli, he has attained international acclaim as a masterful storyteller and creator of Japanese animated feature films,
+                 and is widely regarded as one of the most accomplished filmmakers in the history of animation.</p>
+            </div>
+        </section>
+
+        <section class="main-section" data-scroll>
+            <picture class="fig">
+                <source srcset="./Images/Isao_Takahata.jpg" media="(max-width: 600px)">
+                <source srcset="./Images/Isao_Takahata.jpg" media="(max-width: 900px)">
+                <source srcset="./Images/takahata.png" class="imgg">
+                <img src="./Images/takahata.png" alt="Bees" class="imgg">
+            </picture>
+
+            <div class="content">
+                <header class="content-header">
+                    <div class="subheading">Studio Ghibli Founder</div>
+                    <h2 class="main-heading">Isao Takahata</h2>
+                </header>
+                
+                <p class="para">Isao Takahata was a Japanese director, screenwriter and producer. A co-founder of Studio Ghibli,
+                 he earned international critical acclaim for his work as a director of Japanese animated feature films.</p>
+            </div>
+        </section>
+
+        <section class="main-section" data-scroll>
+            <picture class="fig">
+                <source srcset="./Images/Toshio_Suzuki,_Howl's_Moving_Castle_premiere.jpg" media="(max-width: 600px)">
+                <source srcset="./Images/Toshio_Suzuki,_Howl's_Moving_Castle_premiere.jpg" media="(max-width: 900px)">
+                <source srcset="./Images/toshio.jpg" class="imgg">
+                <img src="./Images/toshio.jpg" alt="Bees" class="imgg">
+            </picture>
+
+            <div class="content">
+                <header class="content-header">
+                    <div class="subheading">Studio Ghibli Founder</div>
+                    <h2 class="main-heading">Toshio Suzuki</h2>
+                </header>
+                
+                <p class="para">Toshio Suzuki is a Japanese film producer of anime and a long-time colleague of Hayao Miyazaki, as well as a co-founder and the president of Studio Ghibli.
+                 Suzuki is renowned as one of Japan's most successful producers after the enormous box office success of many Ghibli films.</p>
+            </div>
+        </section>
+
+        
+    </main>
+    <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+
+    <script>
+        console.clear();
+
+        ScrollOut({
+        cssProps: {
+            visibleY: true,
+            viewportY: true
+        }
+        });
+
+        Splitting({ target: '.main-heading' });
+        
+
+
+    </script>
+</body>
+</html>

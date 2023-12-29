@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Doodle+Shadow&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kalnia:wght@100;200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
   margin: 0;
   list-style: none;
@@ -265,15 +265,19 @@ nav .logo {
 }
 
 .display {
-  padding-top: 50px;
+  padding-top: 45px;
   padding-bottom: 100px;
   width: 100%;
-  background: rgb(192, 240, 255);
+  background: rgb(191, 229, 245);
 }
 
 .reveal-type {
   font-size: 50px;
   text-align: center;
+  color: black;
+  letter-spacing: 6px;
+  font-family: kalnia;
+  font-weight: 500;
 }
 
 .movies {
@@ -359,6 +363,10 @@ nav .logo {
   }
   .reveal-type {
     font-size: 40px;
+    letter-spacing: 4px;
+  }
+  .display {
+    padding-top: 20px;
   }
 }
 /************************************/
