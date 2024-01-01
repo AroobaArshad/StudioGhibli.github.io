@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Studio Ghibli</title>
     <link rel="stylesheet" href="./CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
 </head>
 <body>
     <header>
@@ -31,29 +33,69 @@
     </header>
     
     <main>
-        <div class="slideshow-container" style="width: 100%; height: 80%;">
-            <img src="./Images/Pic1.png" alt="Image 1">
-            <img src="./Images/Pic2.png" alt="Image 2">
-            <img src="./Images/Pic3.png" alt="Image 3">
-            <img src="./Images/Pic4.png" alt="Image 4">
+        <div class="hero side-panel-open">
+            <video src="studioghibli.mp4" autoplay muted loop  class="vid"></video>
+            <div class="content">
+                <div class="side-panel">
+                    <div class="side-logo">
+                        <img src="./Images/ghibli_logo_white-1.png" alt="">
+                    </div>
+                    <div class="info">
+                        <p>Studio Ghibli, Inc. is a Japanese animation studio based in Koganei, Tokyo. It has a strong presence in the animation industry
+                         and has expanded its portfolio to include various media formats, such as short subjects, television commercials, and two television films.
+                         Their work has been well-received by audiences and recognized with numerous awards. <br><br> Among the studio's highest-grossing
+                         films are Spirited Away (2001), Howl's Moving Castle (2004), and Ponyo (2008). Studio Ghibli was founded on June 15, 1985, by the directors
+                         Hayao Miyazaki and Isao Takahata and producer Toshio Suzuki, after acquiring Topcraft's assets. The studio has also collaborated with video
+                         game studios on the visual development of several games.</p>
+                    </div>
+                </div>
+                <button class="side-panel-toggle" type="button">
+                    <span class="material-symbols-outlined sp-icon-open">keyboard_double_arrow_right</span>
+                    <span class="material-symbols-outlined sp-icon-close" style="display: none;">keyboard_double_arrow_left</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="collection">
+            <div class="written-info">
+                <h2>Our Collection</h2>
+                <p>Studio Ghibli is renowned for its exceptional collection of animated films that have captivated audiences worldwide. Founded by visionary directors
+                Hayao Miyazaki and Isao Takahata, the studio has crafted an enchanting array of movies that blend stunning animation, compelling storytelling, and profound themes.
+                From the timeless classic "My Neighbor Totoro" to the mesmerizing "Spirited Away," each film in the Studio Ghibli collection showcases meticulous
+                attention to detail, and deeply resonant characters. 
+            </p>
+            </div>
+            
+            <img src="./Images/School.png" alt="" class="big">
+            <img src="School (1).png" alt="" class="small">
+            <img src="exsmall.png" alt="" class="exsmall">
+        </div>
+
+        <div class="movies">
+            <div class="movie-images">
+                <img src="./Images/Spirited.jpg" alt="">
+                <img src="./Images/ponyo.jpg" alt="">
+                <img src="./Images/BoyAndTheHeron.jpg" alt="">
+                <img src="./Images/howl's.jpg" alt="">
+                <img src="./Images/arrietty.jpg" alt="">
+                <img src="./Images/ocean_waves.jpg" alt="">
+                <img src="./Images/whisper.jpg" alt="">
+                <img src="./Images/kiki.jpg" alt="">
+            </div>
+            
+            <button>See All Movies &nbsp;
+                <span class="material-symbols-outlined">
+                    arrow_right_alt
+                    </span>
+            </button>
+            <div class="totoros">
+                <img src="./Images/bee242-removebg-preview.png" alt="" class="totoros">
+            </div>       
         </div>
     </main>
 
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script> 
     <script>
-        // Get all the images within the slideshow container
-    const slides = document.querySelectorAll('.slideshow-container img');
-    let currentSlideIndex = 0;
-
-    // Function to show the next slide
-    function showNextSlide() {
-        slides[currentSlideIndex].style.display = 'none';
-        currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-        slides[currentSlideIndex].style.display = 'block';
-    }
-
-    // Automatically transition to the next slide every 5 seconds (adjust as needed)
-    setInterval(showNextSlide, 5700);
 
     // Basic setup for the lenis smooth scrolling library
     // Comes directly from their documentation
@@ -70,6 +112,23 @@
 
     requestAnimationFrame(raf)
 
+    document.addEventListener("DOMContentLoaded", function() {
+        // Initially hiding the side panel
+        document.querySelector(".hero").classList.remove("side-panel-open");
+
+        // Toggle side panel and icon
+        document.querySelector(".side-panel-toggle").addEventListener("click", function() {
+            const hero = document.querySelector(".hero");
+            hero.classList.toggle("side-panel-open");
+
+            // Toggle between close/open icons
+            const openIcon = document.querySelector(".sp-icon-open");
+            const closeIcon = document.querySelector(".sp-icon-close");
+            openIcon.style.display = hero.classList.contains("side-panel-open") ? "none" : "initial";
+            closeIcon.style.display = hero.classList.contains("side-panel-open") ? "initial" : "none";
+        });
+    });
+
     </script>
 </body>
-</html>
+</html> 
