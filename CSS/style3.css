@@ -11,7 +11,7 @@ body {
   line-height: 1.6;
   font-weight: 400;
   letter-spacing: -0.015em;
-  background-color: rgb(237, 237, 237);
+  background-color: whitesmoke;
   height: 100%;
   font-family: Poppins;
 }
@@ -126,24 +126,62 @@ main {
   margin-top: 40px;
 }
 
-.intro h1 {
-  background-color: skyblue;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  padding: 20px;
-  width: 88%;
-  margin: auto;
-  font-size: 38px;
-  font-weight: 700;
-  letter-spacing: 4px;
+.intro {
+  justify-content: center;
   text-align: center;
-  margin-top: 50px;
-  margin-bottom: 30px;
-  border: 3px solid rgb(61, 153, 189);
-  border-radius: 10px;
-  box-shadow: 10px 10px 6px silver;
-  color: rgb(22, 78, 113);
+  margin-top: 5%;
+  width: 100%;
+  height: 200px;
+  overflow: hidden; /* Added overflow to hide the overflowing content */
 }
 
+.intro span {
+  display: block;
+  text-transform: uppercase;
+}
+
+.text-1 {
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  background: whitesmoke;
+  position: relative;
+  animation: text 3s 1;
+  margin-bottom: 5px;
+}
+
+.text-2 {
+  font-size: 38px;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(100%); /* Initially position below its final location */
+  animation: slideDownText 1s 2s forwards ease-out; /* Changed animation properties */
+}
+
+@keyframes text {
+  0% {
+    color: black;
+    margin-bottom: -94px;
+  }
+  30% {
+    letter-spacing: 12px;
+    margin-bottom: -94px;
+  }
+  85% {
+    letter-spacing: 8px;
+    margin-bottom: -94px;
+  }
+}
+@keyframes slideDownText {
+  0% {
+    opacity: 0;
+    transform: translateY(100%); /* Start from below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .main-section {
   --scroll-length: 1.5;
   height: calc(var(--scroll-length) * 100vh);
