@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Ghibli</title>
+    <link rel="stylesheet" href="./CSS/style4.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src = "./Images/Studio_Ghibli.svg" alt="">
+        </div>
+        <input type = "checkbox" id = "check_nav" hidden>
+        <nav>
+            <div class="logo">
+                <img src = "./Images/Studio_Ghibli.svg" alt="">
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Movies.html">Movies</a></li>
+                <li><a href="Creators.html">Creators</a></li>
+                <li><a href="Characters.html" class = "active">Characters</a></li>
+            </ul>
+        </nav>
+        <label for="check_nav" class="lines">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+    </header>
+    
+    <main>
+        <div class="char-heading">
+            <h1>Studio Ghibli's Magical Characters</h1>
+        </div>
+        <div class="container"></div>
+    </main>
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script> 
+    <script>
+
+    // Basic setup for the lenis smooth scrolling library
+    // Comes directly from their documentation
+    const lenis = new Lenis()
+
+    lenis.on('scroll', (e) => {
+    console.log(e)
+    })
+
+    function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+
+    // Clear the container before adding your own images
+        document.querySelector(".container").innerHTML = '';
+
+        // Array of image URLs
+        const imageUrls = [
+        './Images/Characters/toto1.png',
+        './Images/Characters/toto2.png',
+        './Images/Characters/toto3.png',
+        './Images/Characters/mononoke1.png',
+        './Images/Characters/mononoke2.png',
+        './Images/Characters/mononoke3.png',
+        './Images/Characters/ponyo1.png',
+        './Images/Characters/ponyo2.png',
+        './Images/Characters/ponyo3.png',
+        './Images/Characters/spirited1.png',
+        './Images/Characters/spirited2.png',
+        './Images/Characters/spirited3.png',
+        './Images/Characters/wind1.png',
+        './Images/Characters/wind2.png',
+        './Images/Characters/wind3.png',
+        './Images/Characters/poppy1.png',
+        './Images/Characters/poppy2.png',
+        './Images/Characters/poppy3.png',
+        './Images/Characters/heart1.png',
+        './Images/Characters/heart2.png',
+        './Images/Characters/heart3.png',
+        './Images/Characters/howl1.png',
+        './Images/Characters/howl2.png',
+        './Images/Characters/howl3.png',
+        './Images/Characters/Arrietty1.png',
+        './Images/Characters/Arrietty2.png',
+        './Images/Characters/Arrietty3.png',
+        './Images/Characters/kiki1.png',
+        './Images/Characters/kiki2.png',
+        './Images/Characters/kiki3.png',
+        ];
+
+        var fragment = document.createDocumentFragment();
+        // Loop through your image URLs and create div elements with your images
+        for (var i = 0; i < imageUrls.length; i++) {
+        var photo = document.createElement("div");
+        photo.setAttribute('data-scroll', '');
+        photo.style.backgroundImage = `url(${imageUrls[i]})`; // Set the background image
+        fragment.appendChild(photo);
+        }
+
+        document.querySelector(".container").appendChild(fragment);
+
+        // ScrollOut initialization
+        ScrollOut({
+        threshhold: 0.5,
+        cssProps: {
+            visibleY: true
+        }
+        });
+
+
+    </script>
+</body>
+</html> 

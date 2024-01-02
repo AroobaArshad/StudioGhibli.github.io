@@ -251,26 +251,36 @@ nav .logo {
 
 .movies button {
   margin: auto;
-  font-size: 18px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 14px 20px;
   margin-top: 40px;
   border: 2px solid rgb(0, 155, 101);
   border-radius: 5px;
   box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.45);
   letter-spacing: 2px;
   cursor: pointer;
-  color: rgb(2, 118, 77);
   transition: 0.8s;
 }
-.movies button:hover {
+.movies button a {
+  color: rgb(2, 118, 77);
+  padding: 14px 20px;
+  margin: auto;
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: 0.8s;
+}
+.movies button a:hover {
   color: #fff;
+}
+.movies button:hover {
   background: rgb(0, 155, 101);
   box-shadow: 12px 12px 5px rgba(0, 0, 0, 0.46);
-  padding: 18px 24px;
+  padding: 6px 12px;
   font-size: 19px;
   transition: 0.8s;
 }
