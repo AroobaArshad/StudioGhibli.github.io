@@ -181,7 +181,7 @@ nav .logo{
 .slider .list .item .content p:nth-child(1) {
     text-transform: uppercase;
     letter-spacing: 8px;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .slider .list .item .content h2{
@@ -247,7 +247,7 @@ nav .logo{
 
 .slides {
     position: absolute;
-    bottom: 5%;
+    bottom: 10%;
     z-index: 11;
     display: flex;
     gap: 10px;
@@ -264,8 +264,8 @@ nav .logo{
 }
 
 .slides .item {
-    width: 150px;
-    height: 220px;
+    width: 170px;
+    height: 240px;
     filter: brightness(.5);
     transition: .5s;
     flex-shrink: 0;
@@ -281,7 +281,6 @@ nav .logo{
 .slides .item.active {
     filter: brightness(1.3);
 }
-
 
 .display {
     padding-top: 45px;
@@ -384,12 +383,12 @@ nav .logo{
     }
 
     .reveal-type {
-        font-size: 40px;
-        letter-spacing: 4px;
+        font-size: 30px;
+        letter-spacing: 3px;
     }
 
     .display{
-        padding-top: 20px;
+        padding-top: 25px;
     }
 }
 

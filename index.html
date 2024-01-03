@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Studio Ghibli</title>
     <link rel="stylesheet" href="./CSS/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
 </head>
 <body>
     <header>
@@ -94,43 +93,30 @@
                 <img src="./Images/bee242-removebg-preview.png" alt="" class="totoros">
             </div>       
         </div>
+
+        <div class="media">
+            <h2>Latest News</h2>
+            <hr>
+
+            <div class="main2">
+                <div class="content2">
+                    <span style="--i:1;"><img src="news1.jpg" alt=""></span>
+                    <span style="--i:2;"><img src="news2.jpg" alt=""></span>
+                    <span style="--i:3;"><img src="news3.jpg" alt=""></span>
+                    <span style="--i:4;"><img src="news4.jpg" alt=""></span>
+                    <span style="--i:5;"><img src="news5.jpg" alt=""></span>
+                    <span style="--i:6;"><img src="news6.jpg" alt=""></span>
+                    <span style="--i:7;"><img src="news7.jpg" alt=""></span>
+                    <span style="--i:8;"><img src="news8.jpg" alt=""></span>
+                </div>
+            </div>
+
+            <img src="png-clipart-sosuke-the-little-mermaid-removebg-preview.png" alt="" class="boat">
+        </div>
     </main>
 
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script> 
-    <script>
+    <script src="./JavaScript/index.js"></script>
 
-    // Basic setup for the lenis smooth scrolling library
-    // Comes directly from their documentation
-    const lenis = new Lenis()
-
-    lenis.on('scroll', (e) => {
-    console.log(e)
-    })
-
-    function raf(time) {
-    lenis.raf(time)
-    requestAnimationFrame(raf)
-    }
-
-    requestAnimationFrame(raf)
-
-    document.addEventListener("DOMContentLoaded", function() {
-        // Initially hiding the side panel
-        document.querySelector(".hero").classList.remove("side-panel-open");
-
-        // Toggle side panel and icon
-        document.querySelector(".side-panel-toggle").addEventListener("click", function() {
-            const hero = document.querySelector(".hero");
-            hero.classList.toggle("side-panel-open");
-
-            // Toggle between close/open icons
-            const openIcon = document.querySelector(".sp-icon-open");
-            const closeIcon = document.querySelector(".sp-icon-close");
-            openIcon.style.display = hero.classList.contains("side-panel-open") ? "none" : "initial";
-            closeIcon.style.display = hero.classList.contains("side-panel-open") ? "initial" : "none";
-        });
-    });
-
-    </script>
 </body>
 </html> 
