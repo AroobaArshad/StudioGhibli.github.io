@@ -558,4 +558,54 @@ nav .logo {
     padding-bottom: 10px;
     padding-top: 40px;
   }
+}
+@media screen and (max-width: 380px) {
+  .media {
+    padding: 30px;
+  }
+  .media .boat {
+    width: 225px;
+    height: auto;
+    margin-left: 20%;
+  }
+  .media h2 {
+    font-size: 25px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+  .media hr {
+    height: 4px;
+  }
+  .content2 span img {
+    width: 100%;
+    height: 50%;
+  }
+  .content2 span {
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(130px);
+  }
+  .main2 {
+    padding: 85px;
+    padding-top: 50px;
+    padding-bottom: 6px;
+  }
+}
+@media screen and (max-width: 340px) {
+  .main2 {
+    padding: 55px;
+    padding-top: 50px;
+    padding-bottom: 3px;
+  }
+  .written-info p {
+    font-size: 13px;
+    font-weight: 200;
+  }
+  .written-info h2 {
+    font-size: 20px;
+  }
+  .info {
+    padding-top: 25px;
+  }
+  .info p {
+    font-size: 12px;
+  }
 }/*# sourceMappingURL=style.css.map */
