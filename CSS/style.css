@@ -315,6 +315,38 @@ nav .logo {
   height: auto;
   margin-left: 50%;
   margin-top: 6%;
+  transition: 3s;
+}
+.media .boat:hover {
+  transform: scale(1.2);
+  z-index: 2;
+  margin-left: 15%;
+}
+.media .view_news {
+  margin: auto;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  padding: 15px 25px;
+  margin-top: 40px;
+  color: rgb(2, 118, 77);
+  border: 2px solid rgb(0, 155, 101);
+  border-radius: 5px;
+  box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.45);
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.8s;
+  font-size: 20px;
+  font-weight: 500;
+}
+.media .view_news:hover {
+  color: #fff;
+  font-size: 30px;
+  background: rgb(0, 155, 101);
+  box-shadow: 12px 12px 5px rgba(0, 0, 0, 0.46);
+  padding: 20px 30px;
+  font-size: 19px;
+  transition: 0.8s;
 }
 
 .main2 {
@@ -476,6 +508,10 @@ nav .logo {
   .info {
     padding-top: 45px;
   }
+  .media .boat {
+    width: 350px;
+    margin-top: 10%;
+  }
 }
 @media screen and (max-width: 600px) {
   .side-panel-open .side-panel {
@@ -588,6 +624,14 @@ nav .logo {
     padding-top: 50px;
     padding-bottom: 6px;
   }
+  .content2 {
+    height: 200px;
+  }
+  .media .view_news {
+    margin-top: 0px;
+    font-size: 17px;
+    margin-bottom: 30px;
+  }
 }
 @media screen and (max-width: 340px) {
   .main2 {
@@ -607,5 +651,16 @@ nav .logo {
   }
   .info p {
     font-size: 12px;
+  }
+  .media .view_news {
+    margin-top: 0px;
+    font-size: 17px;
+    margin-bottom: 30px;
+  }
+  .content2 {
+    height: 200px;
+  }
+  header {
+    padding: 0 14px;
   }
 }/*# sourceMappingURL=style.css.map */

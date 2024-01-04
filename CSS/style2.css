@@ -121,7 +121,7 @@ nav .logo {
   }
 }
 .slider {
-  height: 100vh;
+  height: 90vh;
   position: relative;
   margin-top: 90px;
 }
@@ -369,21 +369,41 @@ nav .logo {
     padding-top: 25px;
   }
 }
+@media screen and (max-width: 330px) {
+  .slides .item {
+    width: 100px;
+    height: 150px;
+  }
+  .slides {
+    height: 160px;
+    padding: 0 30px;
+  }
+  .slider .list .item .content h2 {
+    font-size: 25px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+  .slider .list .item .content p:nth-child(1) {
+    font-size: 13px;
+    letter-spacing: 4px;
+  }
+  .slider .list .item .content p:nth-child(3) {
+    font-size: 13px;
+  }
+  .btn button {
+    width: 30px;
+    height: 30px;
+  }
+}
 /************************************/
 /*********Styling the Footer*********/
 /************************************/
 footer {
   position: relative;
   width: 100%;
-  height: 66vh;
+  height: 62vh;
   background: linear-gradient(to right, rgb(61, 153, 189), skyblue);
   overflow: hidden;
-}
-
-/*Positioning the section that contains logos and their links*/
-.wrapper {
-  margin-left: 50px;
-  margin-top: 35px;
 }
 
 .weee:hover {

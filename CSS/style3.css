@@ -83,45 +83,6 @@ nav .logo {
   margin: 6px 0;
 }
 
-@media screen and (max-width: 1000px) {
-  header {
-    width: 100%;
-    padding: 0 20px;
-  }
-  nav {
-    position: absolute;
-    left: -300px;
-    top: 0;
-    z-index: 99;
-    width: 280px;
-    height: 100vh;
-    background-color: skyblue;
-    transition: 0.2s;
-    box-shadow: 2px 0 20px 0 rgba(0, 0, 0, 0.05);
-  }
-  #check_nav:checked ~ nav {
-    left: 0;
-  }
-  nav .logo {
-    display: block;
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
-  }
-  nav ul {
-    display: block;
-    padding: 0 5px;
-    margin-top: 50px;
-  }
-  nav ul li a {
-    margin-bottom: 20px;
-    padding: 15px 25px;
-    border-radius: 5px;
-  }
-  .lines {
-    display: block;
-  }
-}
 main {
   margin-top: 40px;
 }
@@ -129,10 +90,10 @@ main {
 .intro {
   justify-content: center;
   text-align: center;
-  margin-top: 5%;
-  width: 100%;
-  height: 200px;
-  overflow: hidden; /* Added overflow to hide the overflowing content */
+  overflow: hidden;
+  color: rgb(15, 65, 97);
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .intro span {
@@ -164,11 +125,11 @@ main {
     margin-bottom: -94px;
   }
   30% {
-    letter-spacing: 12px;
+    letter-spacing: 10px;
     margin-bottom: -94px;
   }
   85% {
-    letter-spacing: 8px;
+    letter-spacing: 6px;
     margin-bottom: -94px;
   }
 }
@@ -342,4 +303,96 @@ picture img {
 
 .main-heading {
   font-weight: 700;
+}
+
+@media screen and (max-width: 1000px) {
+  header {
+    width: 100%;
+    padding: 0 20px;
+  }
+  nav {
+    position: absolute;
+    left: -300px;
+    top: 0;
+    z-index: 99;
+    width: 280px;
+    height: 100vh;
+    background-color: skyblue;
+    transition: 0.2s;
+    box-shadow: 2px 0 20px 0 rgba(0, 0, 0, 0.05);
+  }
+  #check_nav:checked ~ nav {
+    left: 0;
+  }
+  nav .logo {
+    display: block;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+  }
+  nav ul {
+    display: block;
+    padding: 0 5px;
+    margin-top: 50px;
+  }
+  nav ul li a {
+    margin-bottom: 20px;
+    padding: 15px 25px;
+    border-radius: 5px;
+  }
+  .lines {
+    display: block;
+  }
+  .text-1 {
+    font-size: 35px;
+  }
+  .text-2 {
+    font-size: 33px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .text-1 {
+    font-size: 34px;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+  }
+  .text-2 {
+    font-size: 32px;
+    letter-spacing: 1px;
+  }
+  .content-header {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 440px) {
+  .navbar {
+    padding: 0 18px;
+  }
+  .text-1 {
+    font-size: 27px;
+  }
+  .text-2 {
+    font-size: 25px;
+  }
+  .intro {
+    padding-top: 10px;
+    height: 200px;
+  }
+}
+@media screen and (max-width: 340px) {
+  .text-1 {
+    font-size: 24px;
+  }
+  .text-2 {
+    font-size: 22px;
+  }
+  .intro {
+    height: 150px;
+  }
+  .navbar {
+    padding: 0 14px;
+  }
+  .intro {
+    padding-top: 0px;
+  }
 }/*# sourceMappingURL=style3.css.map */

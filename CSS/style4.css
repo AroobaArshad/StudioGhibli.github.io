@@ -176,4 +176,18 @@ nav .logo {
     width: calc(100% - 20px); /* Single column on even smaller screens */
     padding-top: calc(100% - 20px); /* Maintain square aspect ratio */
   }
+  .navbar {
+    padding: 0 18px;
+  }
+}
+@media screen and (max-width: 340px) {
+  .navbar {
+    padding: 0 14px;
+  }
+  header {
+    padding: 0 12px;
+  }
+  .char-heading {
+    margin: 25px;
+  }
 }/*# sourceMappingURL=style4.css.map */
