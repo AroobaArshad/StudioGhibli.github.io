@@ -143,6 +143,14 @@ nav .logo{
 .char-heading{
     text-align: center;
     margin: 50px;
+    h1{
+        font-size: 56px;
+        font-weight: 500;
+        color: #131a98;
+        text-shadow: 0px 1px 0 rgba(0, 0, 0, 1), 0px 2px 0 rgba(0, 0, 0, 1), 0px 3px 0 rgba(0, 0, 0, 1),
+        0px 4px 0 rgba(0, 0, 0, 1), 0px 5px 0 rgba(0, 0, 0, 1), 0px 6px 0 rgba(0, 0, 0, 1),
+        0px 12px 5px rgba(0, 0, 0, .3),
+    }
 }
 
 .container {
@@ -175,10 +183,274 @@ nav .logo{
         border-radius: 10px;
         border: 5px solid rgb(93, 206, 251);
     }
-  }
-  
-  /* Responsive styles for smaller screens */
-  @media screen and (max-width: 768px) {
+}
+
+/************************************/
+/*********Styling the Footer*********/
+/************************************/
+
+footer{
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    background: linear-gradient(to right, $activecolor, $mycolor);
+    overflow: hidden;
+    margin-top: 60px;
+}
+
+.footerlogo{
+    width: 200px;
+    height: 100px;
+    margin-top: 35px;
+    margin-left: 60px;
+}
+
+.about_section{
+    h2{
+        position: absolute;
+        top: 20%;
+        left: 38%;
+        color: white;
+        font-size: 26px;
+        font-weight: 500;
+
+        span{
+            display: none;
+        }
+    }
+
+    ul{
+        position: absolute;
+        top: 35%;
+        left: 38%;
+        color: white;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+}
+
+.info_section{
+    h2{
+        position: absolute;
+        top: 20%;
+        left: 52%;
+        color: white;
+        font-size: 26px;
+        font-weight: 500;
+
+        span{
+            display: none;
+        }
+    }
+
+    ul{
+        position: absolute;
+        top: 35%;
+        left: 52%;
+        color: white;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+}
+
+.weee{
+    transition: 0.8s;
+
+    &:hover{
+        color: black;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+.social{
+    h3{
+        font-size: 23px;
+        position: absolute;
+        top: 24%;
+        left: 78%;
+        font-weight: 500;
+    }
+
+    ul{
+        position: absolute;
+        top: 40%;
+        left: 80%;
+        padding: 0;
+        margin: 0;
+        transform: translate(-50%, -50%);
+        display: flex;
+
+        li{
+            margin: 0 35px;
+
+            .fa{
+                font-size: 30px;
+                line-height: 60px;
+                transition: 0.6s;
+                color: #000;
+
+                &:hover{
+                    color: #fff;
+                }
+            }
+
+            a{
+                position: absolute;
+                display: block;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: #fff;
+                text-align: center;
+                transition: 0.6s;
+                box-shadow: 0 5px 4px rgba(0, 0, 0, 0.5);
+
+                &:hover{
+                    transform: translate(0, -10px);
+                }
+            }
+        }
+
+        li:nth-child(1) a:hover{
+            background-color: #1362ca;
+        }
+
+        li:nth-child(2) a:hover{
+            background-color: #1DA1F2;
+        }
+
+        li:nth-child(3) a:hover{
+            background-color: #ec4765;
+        }
+
+        li:nth-child(4) a:hover{
+            background-color: #0A66C2;
+        }
+
+        li:nth-child(5) a:hover{
+            background-color: #000;
+        }
+    }
+}
+
+/*This is the CSS for the wavy animation at the end*/
+/*I have used a background image and positioned it accordingly while adding the respective effects needed*/
+footer .air{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background: url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png);
+    background-size: 1000px 100px
+}
+
+/*There are a total of four waves and they are arranged seperately*/
+/*They all have different z-indexes, opacities, animation time-delay and positions*/
+footer .air.air1{
+    animation: wave 30s linear infinite;
+    z-index: 1000;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0;
+}
+
+footer .air.air2{
+    animation: wave2 15s linear infinite;
+    z-index: 999;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 10px;
+}
+
+footer .air.air3{
+    animation: wave 30s linear infinite;
+    z-index: 998;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 15px;
+}
+
+footer .air.air4{
+    animation: wave2 5s linear infinite;
+    z-index: 997;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom: 20px;
+}
+
+/*Adding the necessary keyframes for the animation*/
+@keyframes wave{
+0%{
+  background-position-x: 0px; 
+}
+100%{
+  background-position-x: 1000px; 
+}
+}
+@keyframes wave2{
+0%{
+  background-position-x: 0px; 
+}
+100%{
+  background-position-x: -1000px; 
+}
+}
+
+@media screen and (max-width: 1000px){
+    .social{
+        h3{
+            font-size: 21px;
+            top: 60%;
+            left: 44%;
+        }
+    
+        ul{
+            top: 70%;
+            left: 47%;
+    
+            li{    
+                .fa{
+                    font-size: 25px;
+                    line-height: 55px;
+                }
+    
+                a{
+                    width: 55px;
+                    height: 55px;
+                }
+            }
+        }
+    }
+
+    .about_section{
+        h2{
+            top: 16%;
+            left: 47%;
+        }
+    
+        ul{
+            top: 26%;
+            left: 47%;
+        }
+    }
+    
+    .info_section{
+        h2{
+            top: 16%;
+            left: 70%;
+        }
+    
+        ul{
+            top: 26%;
+            left: 70%;
+        }
+    }   
+}
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 768px) {
     .container {
       padding: 10px; /* Adjust padding for smaller screens */
     }
@@ -187,9 +459,85 @@ nav .logo{
       width: calc(50% - 20px); /* Two columns on smaller screens */
       padding-top: calc(50% - 20px); /* Maintain square aspect ratio */
     }
-  }
+
+    .char-heading{
+        h1{
+            font-size: 55px;
+        }
+    }
+
+    .footerlogo{
+        width: 160px;
+        height: 75px;
+        margin-left: 30px;
+        margin-top: 20px;
+    }
+
+    .social{
+        h3{
+            font-size: 18px;
+            top: 56%;
+            left: 40%;
+        }
+    
+        ul{
+            top: 66%;
+            left: 44%;
+    
+            li{    
+                .fa{
+                    font-size: 20px;
+                    line-height: 50px;
+                }
+    
+                a{
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+        }
+    }
+
+    .about_section{
+        h2{
+            top: 32%;
+            left: 10%;
+            font-size: 21px;
+
+            span{
+                display: inline;
+                margin-left: 235px;
+            }
+        }
+    
+        ul{
+            display: none;
+        }
+    }
+    
+    .info_section{
+        h2{
+            top: 42%;
+            left: 10%;
+            font-size: 21px;
+
+            span{
+                display: inline;
+                margin-left: 175px;
+            }
+        }
+    
+        ul{
+            display: none;
+        }
+    } 
+
+    .footerpara{
+        display: none;
+    }
+}
   
-  @media screen and (max-width: 480px) {
+@media screen and (max-width: 480px) {
     [data-scroll] {
       width: calc(100% - 20px); /* Single column on even smaller screens */
       padding-top: calc(100% - 20px); /* Maintain square aspect ratio */
@@ -198,8 +546,24 @@ nav .logo{
     .navbar{
         padding: 0 18px;
     }
-  }
+
+    .char-heading{
+        h1{
+            font-size: 40px;
+            font-weight: 410;
+        }
+    }
+}
   
+@media screen and (max-width: 380px){
+    .char-heading{
+        h1{
+            font-size: 35px;
+            font-weight: 410;
+        }
+    } 
+}
+
 @media screen and (max-width: 340px){
     .navbar{
         padding: 0 14px;
@@ -210,6 +574,68 @@ nav .logo{
     }
 
     .char-heading{
-        margin: 25px;
+        h1{
+            font-size: 30px;
+            font-weight: 400;
+        }
+    }
+
+    footer{
+        height: 75vh;
+    }
+
+    .about_section{
+        h2{
+            font-size: 17px;
+
+            span{
+                margin-left: 175px;
+            }
+        }
+    
+        ul{
+            display: none;
+        }
+    }
+    
+    .info_section{
+        h2{
+            font-size: 17px;
+
+            span{
+                margin-left: 127px;
+            }
+        }
+    
+        ul{
+            display: none;
+        }
+    } 
+
+    .social{
+        h3{
+            font-size: 17px;
+            top: 56%;
+            left: 40%;
+        }
+    
+        ul{
+            top: 66%;
+            left: 44%;
+    
+            li{    
+                margin: 0 28px;
+
+                .fa{
+                    font-size: 20px;
+                    line-height: 46px;
+                }
+    
+                a{
+                    width: 45px;
+                    height: 45px;
+                }
+            }
+        }
     }
 }  

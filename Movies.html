@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" href="./CSS/style2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Studio Ghibli Movies</title>
@@ -256,32 +257,42 @@
     <footer>
 
         <!--Adding the logo of my website-->
-        <img src="./Images/Studio_Ghibli.svg" alt="" width="200px" height="100px" style="margin-top: 35px; margin-left: 60px;">
+        <img class="footerlogo" src="./Images/Studio_Ghibli.svg" alt="">
         <!--Adding a small paragraph and wrapping it in a div section-->
-        <div style="margin-top: 25px; margin-left: 60px;">
-          <p style="font-size: 18px; width: 40%; color: #fff;">Ghibli: where every frame holds a piece of childhood's essence</p>
+        <div style="margin-top: 25px; margin-left: 60px;" class="footerpara">
+          <p style="font-size: 18px; width: 30%; color: #fff;">Ghibli: where every frame holds a piece of childhood's essence</p>
         </div>
   
         <!--Making several divs for the rest of the information and positioning them accordingly-->
 
-        <div>
-          <h2 style="position: absolute; top: 80px; left: 735px; color: #fff; font-size: 28px;">Community</h2>
-          <ul style="position: absolute; top: 140px; left: 740px; color: #fff; font-size: 18px;">
-            <li class="weee">Forums</li>
-            <li class="weee">Chapters</li>
+        <div class="about_section">
+          <h2>About <span>+</span></h2>
+          <ul>
+            <li class="weee">Studio Ghibli</li>
+            <li class="weee">FAQs</li>
             <li class="weee">Events</li>
-            <li class="weee">Code Crew</li>
-            <li class="weee">Discord</li>
+            <li class="weee">Contact Us</li>
           </ul>
         </div>
   
-        <div>
-          <h2 style="position: absolute; top: 80px; left: 1005px; color: #fff; font-size: 28px;">Plans</h2>
-          <ul style="position: absolute; top: 140px; left: 1005px; color: #fff; font-size: 18px;">
-            <li class="weee">Paid Memberships</li>
-            <li class="weee">For Students</li>
-            <li class="weee">Business Solutions</li>
+        <div class="info_section">
+          <h2>Information <span>+</span></h2>
+          <ul>
+            <li class="weee">Filmography</li>
+            <li class="weee">In Theatres</li>
+            <li class="weee">Shop</li>
           </ul>
+        </div>
+
+        <div class="social">
+            <h3>Visit us at:</h3>
+            <ul>
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fa fa-github"></i></a></li>
+            </ul>
         </div>
         
         <!--Making divs for creating the wave animation at the end of the footer-->
@@ -292,5 +303,5 @@
         <div class='air air3'></div>
         <div class='air air4'></div>
   
-      </footer>
+    </footer>
 </html>
