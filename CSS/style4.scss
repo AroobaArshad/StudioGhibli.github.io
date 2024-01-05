@@ -139,16 +139,30 @@ nav .logo{
         display: block;
     }
 }
+
+.slideshow-container img {
+    display: none;
+}
+  
+.slideshow-container img:first-child {
+    display: block;
+}
+  
+img {
+    width: 100%;
+    height: 50vw;
+}
+  
   
 .char-heading{
     text-align: center;
     margin: 50px;
+    font-family: kalnia;
     h1{
         font-size: 56px;
         font-weight: 500;
         color: #131a98;
-        text-shadow: 0px 1px 0 rgba(0, 0, 0, 1), 0px 2px 0 rgba(0, 0, 0, 1), 0px 3px 0 rgba(0, 0, 0, 1),
-        0px 4px 0 rgba(0, 0, 0, 1), 0px 5px 0 rgba(0, 0, 0, 1), 0px 6px 0 rgba(0, 0, 0, 1),
+        text-shadow: 0px 1px 0 rgba(0, 0, 0, 1),
         0px 12px 5px rgba(0, 0, 0, .3),
     }
 }
