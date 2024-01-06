@@ -3,28 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio Ghibli</title>
-    <link rel="stylesheet" href="./CSS/style4.css">
+    <title>Studio Ghibli - Characters</title>
+    <link rel="stylesheet" href="./SCSS/style4.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+
+    <!----- Creating a responsive nav bar inside the header tag ----->
     <header>
         <div class="logo">
+            <!-- Adding the png logo image of studio ghibli -->
             <img src = "./Images/Studio_Ghibli.svg" alt="">
         </div>
         <input type = "checkbox" id = "check_nav" hidden>
         <nav>
+            <!-- Another logo image to be displayed for the nav bar of smaller viewports -->
             <div class="logo">
                 <img src = "./Images/Studio_Ghibli.svg" alt="">
             </div>
             <ul>
+                <!-- Giving an active class to distinguish the page that is currently open -->
+                <!-- Linking the nav options to the respective html pages -->
                 <li><a href="index.html">Home</a></li>
                 <li><a href="Movies.html">Movies</a></li>
                 <li><a href="Creators.html">Creators</a></li>
                 <li><a href="Characters.html" class = "active">Characters</a></li>
             </ul>
         </nav>
+        <!-- Creating an option to open nav bar on smaller viewports -->
         <label for="check_nav" class="lines">
             <div></div>
             <div></div>
@@ -32,28 +39,42 @@
         </label>
     </header>
     
+    <!-- Main content of the page -->
     <main>
+
+        <!-- Slide show div that contains all images displayed in the slide show -->
         <div class="slideshow-container" style="width: 100%; height: 80%;">
             <img src="./Images/Pic1.png" alt="Image 1">
             <img src="./Images/Pic2.png" alt="Image 2">
             <img src="./Images/Pic3.png" alt="Image 3">
             <img src="./Images/Pic4.png" alt="Image 4">
         </div><br>
+
+        <!-- Heading for the characters' image gallery -->
         <div class="char-heading">
             <h1>Studio Ghibli's <br>Magical Characters</h1>
         </div>
+
+        <!-- An empty container that is utilized in the JavaScript for adding the images -->
         <div class="container"></div>
+        <!-- Adding a gif and animating it in SCSS -->
+        <img class="gif1" src="./Images/tumblr_m9worzpyKn1rfjowdo1_500.gif" alt="">
+
     </main>
 
+    <!-- Importing the lenis library that produces smooth scrolling -->
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <!-- Using the scroll-out.js library for the scaling effect this gallery has -->
     <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script> 
+    <!-- Linking the JavaScript file to the html -->
     <script src="./JavaScript/Characters.js"></script>
     
 </body>
+
 <!----------------FOOTER--------------->
 <footer>
 
-    <!--Adding the logo of my website-->
+    <!--Adding the logo of the website-->
     <img class="footerlogo" src="./Images/Studio_Ghibli.svg" alt="">
     <!--Adding a small paragraph and wrapping it in a div section-->
     <div style="margin-top: 25px; margin-left: 60px;" class="footerpara">
@@ -81,6 +102,7 @@
       </ul>
     </div>
 
+    <!-- Div that contains social media icons imported from font awesome -->
     <div class="social">
         <h3>Visit us at:</h3>
         <ul>

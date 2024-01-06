@@ -1,30 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="./CSS/style2.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Linking the stylesheet -->
+    <link rel="stylesheet" href="./SCSS/style2.css">
+    <!-- Importing font awesome to get social media icons -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio Ghibli Movies</title>
+    <!-- Giving the page a title -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <title>Studio Ghibli - Movies</title>
 </head>
 <body>
+
+    <!----- Creating a responsive nav bar inside the header tag ----->
     <header>
         <div class="logo">
+            <!-- Adding the png logo image of studio ghibli -->
             <img src = "./Images/Studio_Ghibli.svg" alt="">
         </div>
         <input type = "checkbox" id = "check_nav" hidden>
         <nav>
+            <!-- Another logo image to be displayed for the nav bar of smaller viewports -->
             <div class="logo">
                 <img src = "./Images/Studio_Ghibli.svg" alt="">
             </div>
             <ul>
+                <!-- Giving an active class to distinguish the page that is currently open -->
+                <!-- Linking the nav options to the respective html pages -->
                 <li><a href="index.html">Home</a></li>
                 <li><a href="Movies.html" class = "active">Movies</a></li>
                 <li><a href="Creators.html">Creators</a></li>
                 <li><a href="Characters.html">Characters</a></li>
             </ul>
         </nav>
+        <!-- Creating an option to open nav bar on smaller viewports -->
         <label for="check_nav" class="lines">
             <div></div>
             <div></div>
@@ -32,8 +43,11 @@
         </label>
     </header>
 
+    <!-- Making the slider at the top of the page that displays top movies -->
     <div class="slider">
+        <!-- Div that contains all the list items -->
         <div class="list">
+            <!-- Seperate divs for all five movies -->
             <div class="item active">
                 <img src="./Images/kiki_.jpg" alt="">
                 <div class="content">
@@ -86,38 +100,45 @@
             </div>
         </div>
 
+        <!-- Buttons to toggle back and forth the slider -->
         <div class="btn">
             <button id="back"><</button>
             <button id="next">></button>
         </div>
 
+        <!-- Div that contains the poster slides of movies that you can click -->
         <div class="slides">
             <div class="item active">
-                <img src="./Images/kiki.jpg" alt="">
+                <img src="./Images/Poster-Images/kiki.jpg" alt="">
             </div>
             <div class="item">
-                <img src="./Images/mononoke.jpeg" alt="">
+                <img src="./Images/Poster-Images/mononoke.jpeg" alt="">
             </div>
             <div class="item">
-                <img src="./Images/ponyo.jpg" alt="">
+                <img src="./Images/Poster-Images/ponyo.jpg" alt="">
             </div>
             <div class="item">
-                <img src="./Images/totoro.jpg" alt="">
+                <img src="./Images/Poster-Images/totoro.jpg" alt="">
             </div>
             <div class="item">
-                <img src="./Images/whisper.jpg" alt="">
+                <img src="./Images/Poster-Images/whisper.jpg" alt="">
             </div>
         </div>
     </div>
 
+    <!-- Main div that displays all studio ghibli movies -->
     <div class="display">
         <br>
+        <!-- Adding animation on the heading -->
         <h1 class="reveal-type">All Ghibli Movies</h1>
         <br><br>
+        <!-- Movies div that contains all the separate divs for the movies -->
         <div class="movies">
-            
+            <!-- Movie cards that have hover effects -->
             <div class="movie-card">
-                <img src="./Images/nausicaa.jpg" alt="" class="cardImg">
+                <!-- Poster image of the movie -->
+                <img src="./Images/Poster-Images/nausicaa.jpg" alt="" class="cardImg">
+                <!-- Written content that appears when you hover over the cards -->
                 <div class="card-content">
                     <h1 class="movie-name">Nausicaa</h1>
                     <p class="movie-info">In a post-apocalyptic age, Nausicaa, a princess who guards the Valley of the Wind,
@@ -126,7 +147,7 @@
                 </div>
             </div>
             <div class="movie-card">
-                <img src="./Images/the_wind_rises.jpeg" alt="" class="cardImg">
+                <img src="./Images/Poster-Images/the_wind_rises.jpeg" alt="" class="cardImg">
                 <div class="card-content">
                     <h1 class="movie-name">The Wind Rises</h1>
                     <p class="movie-info">Jiro Horikoshi studies to fulfil his aim of becoming an aeronautical engineer. As WWII begins,
@@ -135,7 +156,7 @@
                 </div>
             </div>
             <div class="movie-card">
-                <img src="./Images/BoyAndTheHeron.jpg" alt="" class="cardImg">
+                <img src="./Images/Poster-Images/BoyAndTheHeron.jpg" alt="" class="cardImg">
                 <div class="card-content">
                     <h1 class="movie-name">The Boy And The Heron</h1>
                     <p class="movie-info">Mahito struggles to settle in a new town after his mother's death. A talking heron informs him that his mother is still alive, he enters an abandoned tower in search of her.</p>
@@ -143,7 +164,7 @@
                 </div>
             </div>
             <div class="movie-card">
-                <img src="./Images/howl's.jpg" alt="" class="cardImg">
+                <img src="./Images/Poster-Images/howl's.jpg" alt="" class="cardImg">
                 <div class="card-content">
                     <h1 class="movie-name">Howl's Moving Castle</h1>
                     <p class="movie-info">The Witch of Waste transforms Sophie into an old lady. Sophie must find a way to break the spell with the help of Howl's friends.</p>
@@ -151,7 +172,7 @@
                 </div>
             </div>
             <div class="movie-card">
-                <img src="./Images/from-up-on-poppy-hill.jpg" alt="" class="cardImg">
+                <img src="./Images/Poster-Images/from-up-on-poppy-hill.jpg" alt="" class="cardImg">
                 <div class="card-content">
                     <h1 class="movie-name">From Up On Poppy Hill</h1>
                     <p class="movie-info">Umi Matsuzaki, a 16-year-old girl, provides for her siblings and grandmother. Her life
@@ -160,7 +181,7 @@
                 </div>
             </div>
             <div class="movie-card">
-                <img src="./Images/Spirited.jpg" alt="" class="cardImg">
+                <img src="./Images/Poster-Images/Spirited.jpg" alt="" class="cardImg">
                 <div class="card-content">
                     <h1 class="movie-name">Spirited Away</h1>
                     <p class="movie-info">Chihiro and her parents end up at an abandoned amusement park inhabited by supernatural beings.
@@ -169,7 +190,7 @@
                 </div>
             </div>
             <div class="movie-card">
-                <img src="./Images/arrietty.jpg" alt="" class="cardImg">
+                <img src="./Images/Poster-Images/arrietty.jpg" alt="" class="cardImg">
                 <div class="card-content">
                     <h1 class="movie-name">Arrietty</h1>
                     <p class="movie-info">The Clock family lives in another family's residence and steals their goods.
@@ -178,7 +199,7 @@
                 </div>
             </div>
             <div class="movie-card">
-                <img src="./Images/Castle_in_the_Sky.webp" alt="" class="cardImg">
+                <img src="./Images/Poster-Images/Castle_in_the_Sky.webp" alt="" class="cardImg">
                 <div class="card-content">
                     <h1 class="movie-name">Castle In The Sky</h1>
                     <p class="movie-info">Pazu's life changes when he meets Sheeta, a girl whom pirates are chasing for her crystal amulet,
@@ -187,7 +208,7 @@
                 </div>
             </div>
             <div class="movie-card">
-                <img src="./Images/grave_fireflies.jpg" alt="" class="cardImg">
+                <img src="./Images/Poster-Images/grave_fireflies.jpg" alt="" class="cardImg">
                 <div class="card-content">
                     <h1 class="movie-name">Grave Of The Fireflies</h1>
                     <p class="movie-info">Two siblings struggle to stay together and survive during the outbreak of World War II after getting
@@ -196,7 +217,7 @@
                 </div>
             </div>
             <div class="movie-card">
-                <img src="./Images/Only_Yesterday.webp" alt="" class="cardImg">
+                <img src="./Images/Poster-Images/Only_Yesterday.webp" alt="" class="cardImg">
                 <div class="card-content">
                     <h1 class="movie-name">Only Yesterday</h1>
                     <p class="movie-info">Twenty-seven-year-old Taeko Okajima travels to her relative's house in the countryside
@@ -205,7 +226,7 @@
                 </div>
             </div>
             <div class="movie-card">
-                <img src="./Images/princessKaguya.jpg" alt="" class="cardImg">
+                <img src="./Images/Poster-Images/princessKaguya.jpg" alt="" class="cardImg">
                 <div class="card-content">
                     <h1 class="movie-name">The Tale Of Princess Kaguya</h1>
                     <p class="movie-info">A farmer finds a girl inside a bamboo stalk who grows up to become a beautiful lady.
@@ -214,7 +235,7 @@
                 </div>
             </div>
             <div class="movie-card">
-                <img src="./Images/ocean_waves.jpg" alt="" class="cardImg">
+                <img src="./Images/Poster-Images/ocean_waves.jpg" alt="" class="cardImg">
                 <div class="card-content">
                     <h1 class="movie-name">Ocean Waves</h1>
                     <p class="movie-info">As he journeys back from Tokyo to his high school for a reunion, Taku Morisaki recounts his memories of his school days.</p>
@@ -224,84 +245,116 @@
         </div>
     </div>
 
+    <div class="music">
+        <h2 class="reveal-type">Top ghibli scores</h2>
+        <div class="score1">
+            <img src="./Images/final_.jpg" alt="">
+            <div class="cont">
+                <h3>Merry Go Round Of Life</h3>
+                <p>Joe Hisashi</p>
+                <p>+ Save on Spotify</p>
+                <audio src="./Audios/Merry_Go_Round.mp3" controls></audio>
+            </div>
+        </div>
+
+        <div class="score2">
+            <img src="./Images/final2.jpg" alt="">
+            <div class="cont">
+                <h3>One Summer's Day</h3>
+                <p>Joe Hisashi</p>
+                <p>+ Save on Spotify</p>
+                <audio src="./Audios/One_Summer_Day.mp3" controls></audio>
+            </div>
+        </div>
+
+        <div class="score1">
+            <img src="./Images/kikis-delivery-serice.jpg" alt="">
+            <div class="cont">
+                <h3>A Town With An Ocean View</h3>
+                <p>Joe Hisashi</p>
+                <p>+ Save on Spotify</p>
+                <audio src="./Audios/Ocean_Wave.mp3" controls></audio>
+            </div>
+        </div>
+
+        <div class="score2">
+            <img src="./Images/ashitaka.jpeg" alt="">
+            <div class="cont">
+                <h3>Journey To The West</h3>
+                <p>Joe Hisashi</p>
+                <p>+ Save on Spotify</p>
+                <audio src="./Audios/Journey_West.mp3" controls></audio>
+            </div>
+        </div>
+
+        <button>See All</button>
+        <img class="ex" src="./Images/ghibli-chibi-totoro.png" alt="">
+
+    </div>
+
+    <!-- Adding the cdn of gsap -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js" integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js" integrity="sha512-OzC82YiH3UmMMs6Ydd9f2i7mS+UFL5f977iIoJ6oy07AJT+ePds9QOEtqXztSH29Nzua59fYS36knmMcv79GOg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    <script src="https://unpkg.com/split-type"></script>
+    <!-- Adding the cdn of the ScrollTrigger library of gsap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js" integrity="sha512-OzC82YiH3UmMMs6Ydd9f2i7mS+UFL5f977iIoJ6oy07AJT+ePds9QOEtqXztSH29Nzua59fYS36knmMcv79GOg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Importing the split type library -->
     <script src="https://unpkg.com/split-type"></script>
+    <!-- Importing lenis library for smooth scrolling -->
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script> 
+    <!-- Linking the javaScript file with the html -->
     <script src="./JavaScript/Movies.js"></script>
-    <script>
-        gsap.registerPlugin(ScrollTrigger);
 
-        const splitTypes = document.querySelectorAll(".reveal-type");
-        splitTypes.forEach((char, i) => {
-            const text = new SplitType(char, { types: "chars" });
-
-            gsap.from(text.chars, {
-                scrollTrigger: {
-                    trigger: char,
-                    start: 'top 80%',
-                    end: 'top 20%',
-                    scrub: true,
-                    markers: false
-                },
-
-                y: 90,
-                opacity: 0,
-                stagger: 0.1
-            });
-        });
-
-    </script>
 </body>
-    <!----------------FOOTER--------------->
-    <footer>
 
-        <!--Adding the logo of my website-->
-        <img class="footerlogo" src="./Images/Studio_Ghibli.svg" alt="">
-        <!--Adding a small paragraph and wrapping it in a div section-->
-        <div style="margin-top: 25px; margin-left: 60px;" class="footerpara">
-          <p style="font-size: 18px; width: 30%; color: #fff;">Ghibli: where every frame holds a piece of childhood's essence</p>
-        </div>
-  
-        <!--Making several divs for the rest of the information and positioning them accordingly-->
+<!----------------FOOTER--------------->
+<footer>
 
-        <div class="about_section">
-          <h2>About <span>+</span></h2>
-          <ul>
-            <li class="weee">Studio Ghibli</li>
-            <li class="weee">FAQs</li>
-            <li class="weee">Events</li>
-            <li class="weee">Contact Us</li>
-          </ul>
-        </div>
-  
-        <div class="info_section">
-          <h2>Information <span>+</span></h2>
-          <ul>
-            <li class="weee">Filmography</li>
-            <li class="weee">In Theatres</li>
-            <li class="weee">Shop</li>
-          </ul>
-        </div>
+    <!--Adding the logo of the website-->
+    <img class="footerlogo" src="./Images/Studio_Ghibli.svg" alt="">
+    <!--Adding a small paragraph and wrapping it in a div section-->
+    <div style="margin-top: 25px; margin-left: 60px;" class="footerpara">
+      <p style="font-size: 18px; width: 30%; color: #fff;">Ghibli: where every frame holds a piece of childhood's essence</p>
+    </div>
 
-        <div class="social">
-            <h3>Visit us at:</h3>
-            <ul>
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                <li><a href="#"><i class="fa fa-github"></i></a></li>
-            </ul>
-        </div>
-        
-        <!--Making divs for creating the wave animation at the end of the footer-->
-        <!--Giving them class names so that we can style them in the stylesheet accordingly-->
-  
-        <div class='air air1'></div>
-        <div class='air air2'></div>
-        <div class='air air3'></div>
-        <div class='air air4'></div>
-  
-    </footer>
+    <!--Making several divs for the rest of the information and positioning them accordingly-->
+
+    <div class="about_section">
+      <h2>About <span>+</span></h2>
+      <ul>
+        <li class="weee">Studio Ghibli</li>
+        <li class="weee">FAQs</li>
+        <li class="weee">Events</li>
+        <li class="weee">Contact Us</li>
+      </ul>
+    </div>
+
+    <div class="info_section">
+      <h2>Information <span>+</span></h2>
+      <ul>
+        <li class="weee">Filmography</li>
+        <li class="weee">In Theatres</li>
+        <li class="weee">Shop</li>
+      </ul>
+    </div>
+
+    <!-- Div that contains social media icons imported from font awesome -->
+    <div class="social">
+        <h3>Visit us at:</h3>
+        <ul>
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="#"><i class="fa fa-github"></i></a></li>
+        </ul>
+    </div>
+    
+    <!--Making divs for creating the wave animation at the end of the footer-->
+    <!--Giving them class names so that we can style them in the stylesheet accordingly-->
+
+    <div class='air air1'></div>
+    <div class='air air2'></div>
+    <div class='air air3'></div>
+    <div class='air air4'></div>
+
+</footer>
 </html>

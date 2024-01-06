@@ -43,6 +43,27 @@ slides.forEach((slide, index) => {
     });
 });
 
+gsap.registerPlugin(ScrollTrigger);
+
+const splitTypes = document.querySelectorAll(".reveal-type");
+splitTypes.forEach((char, i) => {
+    const text = new SplitType(char, { types: "chars" });
+
+    gsap.from(text.chars, {
+        scrollTrigger: {
+            trigger: char,
+            start: 'top 80%',
+            end: 'top 20%',
+            scrub: true,
+            markers: false
+        },
+
+        y: 90,
+        opacity: 0,
+        stagger: 0.1
+    });
+});
+
 // Basic setup for the lenis smooth scrolling library
 // Comes directly from their documentation
 const lenis = new Lenis()

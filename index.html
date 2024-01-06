@@ -3,28 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio Ghibli</title>
-    <link rel="stylesheet" href="./CSS/style.css">
+    <!-- Linking the stylesheet -->
+    <link rel="stylesheet" href="./SCSS/style.css">
+    <!-- Importing google material icons -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <!-- Importing font awesome to get social media icons -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Giving the home page a title -->
+    <title>Studio Ghibli - Home</title>
 </head>
 <body>
+
+    <!----- Creating a responsive nav bar inside the header tag ----->
     <header>
         <div class="logo">
+            <!-- Adding the png logo image of studio ghibli -->
             <img src = "./Images/Studio_Ghibli.svg" alt="">
         </div>
         <input type = "checkbox" id = "check_nav" hidden>
         <nav>
+            <!-- Another logo image to be displayed for the nav bar of smaller viewports -->
             <div class="logo">
                 <img src = "./Images/Studio_Ghibli.svg" alt="">
             </div>
             <ul>
+                <!-- Giving an active class to distinguish the page that is currently open -->
+                <!-- Linking the nav options to the respective html pages -->
                 <li><a href="index.html" class = "active">Home</a></li>
                 <li><a href="Movies.html">Movies</a></li>
                 <li><a href="Creators.html">Creators</a></li>
                 <li><a href="Characters.html">Characters</a></li>
             </ul>
         </nav>
+        <!-- Creating an option to open nav bar on smaller viewports -->
         <label for="check_nav" class="lines">
             <div></div>
             <div></div>
@@ -32,14 +43,19 @@
         </label>
     </header>
     
+    <!-- Main content of the page -->
     <main>
+        <!-- Top div that has a background video and side-panel -->
         <div class="hero side-panel-open">
-            <video src="studioghibli.mp4" autoplay muted loop  class="vid"></video>
+            <!-- Inserting the video at autoplay and loop -->
+            <video src="./Audios/studioghibli.mp4" autoplay muted loop  class="vid"></video>
+            <!-- Div that has the side-panel that opens and closes upon click on a arrow button -->
             <div class="content">
                 <div class="side-panel">
                     <div class="side-logo">
                         <img src="./Images/ghibli_logo_white-1.png" alt="">
                     </div>
+                    <!-- General info on studio ghibli presented in the side panel -->
                     <div class="info">
                         <p>Studio Ghibli, Inc. is a Japanese animation studio based in Koganei, Tokyo. It has a strong presence in the animation industry
                          and has expanded its portfolio to include various media formats, such as short subjects, television commercials, and two television films.
@@ -49,13 +65,17 @@
                          game studios on the visual development of several games.</p>
                     </div>
                 </div>
+
+                <!-- Adding the buttons that toggle between opening and closing the side-panel -->
                 <button class="side-panel-toggle" type="button">
+                    <!-- Using google material icons to import the open and close arrows -->
                     <span class="material-symbols-outlined sp-icon-open">keyboard_double_arrow_right</span>
                     <span class="material-symbols-outlined sp-icon-close" style="display: none;">keyboard_double_arrow_left</span>
                 </button>
             </div>
         </div>
 
+        <!-- Second div of the main page -->
         <div class="collection">
             <div class="written-info">
                 <h2>Our Collection</h2>
@@ -66,39 +86,47 @@
             </p>
             </div>
             
+            <!-- Using several images to display different ones according to the viewport -->
             <img src="./Images/School.png" alt="" class="big">
             <img src="./Images/collectionbg.png" alt="" class="small">
             <img src="./Images/plswork.png" alt="" class="exsmall">
         </div>
 
+        <!-- Third div that contains a few top movies -->
         <div class="movies">
             <div class="movie-images">
-                <img src="./Images/Spirited.jpg" alt="">
-                <img src="./Images/ponyo.jpg" alt="">
-                <img src="./Images/BoyAndTheHeron.jpg" alt="">
-                <img src="./Images/howl's.jpg" alt="">
-                <img src="./Images/arrietty.jpg" alt="">
-                <img src="./Images/ocean_waves.jpg" alt="">
-                <img src="./Images/whisper.jpg" alt="">
-                <img src="./Images/kiki.jpg" alt="">
+                <img src="./Images/Poster-Images/Spirited.jpg" alt="">
+                <img src="./Images/Poster-Images/ponyo.jpg" alt="">
+                <img src="./Images/Poster-Images/BoyAndTheHeron.jpg" alt="">
+                <img src="./Images/Poster-Images/howl's.jpg" alt="">
+                <img src="./Images/Poster-Images/arrietty.jpg" alt="">
+                <img src="./Images/Poster-Images/ocean_waves.jpg" alt="">
+                <img src="./Images/Poster-Images/whisper.jpg" alt="">
+                <img src="./Images/Poster-Images/kiki.jpg" alt="">
             </div>
             
-            <button><a href="Movies.html">
-                See All Movies &nbsp;
-                <span class="material-symbols-outlined">
-                    arrow_right_alt
-                </span>
-            </a>
+            <!-- Button with an icon from google material icons -->
+            <button>
+                <!-- Linking the button to the movies page -->
+                <a href="Movies.html">
+                    See All Movies &nbsp;
+                    <span class="material-symbols-outlined">
+                        arrow_right_alt
+                    </span>
+                </a>
             </button>
+            <!-- Adding a transparent background image -->
             <div class="totoros">
                 <img src="./Images/bee242-removebg-preview.png" alt="" class="totoros">
             </div>       
         </div>
 
+        <!-- Fourth div that displays the latest news section -->
         <div class="media">
             <h2>Latest News</h2>
             <hr>
 
+            <!-- Images that have a 3D rotating animation -->
             <div class="main2">
                 <div class="content2">
                     <span style="--i:1;"><img src="./Images/NewsImages/news1.jpg" alt=""></span>
@@ -113,18 +141,22 @@
             </div>
             <button class="view_news">Read More</button>
 
+            <!-- Adding a transparent background image -->
             <img src="./Images/png-clipart-sosuke-the-little-mermaid-removebg-preview.png" alt="" class="boat">
         </div>
     </main>
 
+    <!-- Adding the lenis library for smooth scrolling -->
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script> 
+    <!-- Linking the JS file with the html -->
     <script src="./JavaScript/index.js"></script>
 
 </body>
+
 <!----------------FOOTER--------------->
 <footer>
 
-    <!--Adding the logo of my website-->
+    <!--Adding the logo of the website-->
     <img class="footerlogo" src="./Images/Studio_Ghibli.svg" alt="">
     <!--Adding a small paragraph and wrapping it in a div section-->
     <div style="margin-top: 25px; margin-left: 60px;" class="footerpara">
@@ -136,22 +168,23 @@
     <div class="about_section">
       <h2>About <span>+</span></h2>
       <ul>
-        <li class="weee">Studio Ghibli</li>
-        <li class="weee">FAQs</li>
-        <li class="weee">Events</li>
-        <li class="weee">Contact Us</li>
+        <li class="footer_list_items">Studio Ghibli</li>
+        <li class="footer_list_items">FAQs</li>
+        <li class="footer_list_items">Events</li>
+        <li class="footer_list_items">Contact Us</li>
       </ul>
     </div>
 
     <div class="info_section">
       <h2>Information <span>+</span></h2>
       <ul>
-        <li class="weee">Filmography</li>
-        <li class="weee">In Theatres</li>
-        <li class="weee">Shop</li>
+        <li class="footer_list_items">Filmography</li>
+        <li class="footer_list_items">In Theatres</li>
+        <li class="footer_list_items">Shop</li>
       </ul>
     </div>
 
+    <!-- Div that contains social media icons imported from font awesome -->
     <div class="social">
         <h3>Visit us at:</h3>
         <ul>
@@ -159,7 +192,6 @@
             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
             <li><a href="#"><i class="fa fa-instagram"></i></a></li>
             <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="#"><i class="fa fa-github"></i></a></li>
         </ul>
     </div>
     

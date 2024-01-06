@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="./CSS/style3.css">
+    <!-- Linking the stylesheet -->
+    <link rel="stylesheet" href="./SCSS/style3.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Importing font awesome to get social media icons -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Document</title>
+    <!-- Giving the home page a title -->
+    <title>Studio Ghibli - Creators</title>
 </head>
 <body>
+
+    <!----- Creating a responsive nav bar inside the header tag ----->
     <header class="navbar">
         <div class="logo">
+            <!-- Adding the png logo image of studio ghibli -->
             <img src = "./Images/Studio_Ghibli.svg" alt="">
         </div>
         <input type = "checkbox" id = "check_nav" hidden>
         <nav>
+            <!-- Another logo image to be displayed for the nav bar of smaller viewports -->
             <div class="logo">
                 <img src = "./Images/Studio_Ghibli.svg" alt="">
             </div>
             <ul>
+                <!-- Giving an active class to distinguish the page that is currently open -->
+                <!-- Linking the nav options to the respective html pages -->
                 <li><a href="index.html">Home</a></li>
                 <li><a href="Movies.html">Movies</a></li>
                 <li><a href="Creators.html" class = "active">Creators</a></li>
                 <li><a href="Characters.html">Characters</a></li>
             </ul>
         </nav>
+        <!-- Creating an option to open nav bar on smaller viewports -->
         <label for="check_nav" class="lines">
             <div></div>
             <div></div>
@@ -32,13 +42,15 @@
     </header>
 
     <main>
+        <!-- The heading of the page with an animation using the splitting.js library -->
         <div class="intro">
-            <!-- <h1 data-splitting>Meet the amazing creators behind <br> this magical studio</h1> -->
             <span class="text-1">Meet the amazing creators behind</span><br>
             <span class="text-2">this magical studio</span>
         </div>
 
+        <!-- Creating a section that contains the image and details displayed with animation -->
         <section class="main-section" data-scroll>
+            <!-- Using the picture element to display different images for different viewports -->
             <picture class="fig">
                 <source srcset="./Images/studiocreators.png" media="(max-width: 600px)">
                 <source srcset="./Images/studiocreators.png" media="(max-width: 900px)">
@@ -46,6 +58,7 @@
                 <img src="./Images/studio-ghibli-documentary-transformed.jpeg" alt="Bees" class="imgg">
             </picture>
 
+            <!-- Written content that appears being triggered on scroll -->
             <div class="content">
                 <header class="content-header">
                     <div class="subheading">Studio Ghibli Founders</div>
@@ -57,6 +70,7 @@
             </div>
         </section>
 
+        <!-- Similar sections displaying informations about the different creators -->
         <section class="main-section" data-scroll>
             <picture class="fig">
                 <source srcset="./Images/Hayao_Miyazaki_cropped.jpg" media="(max-width: 600px)">
@@ -114,34 +128,25 @@
             </div>
         </section>
 
-        
     </main>
+
+    <!-- Importing the scroll-out.js library that is responsible of the animation of appearing text -->
     <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
+    <!-- Importing the splitting.js library that is used in the animation on the heading text -->
     <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
-
-    <script>
-        console.clear();
-
-        ScrollOut({
-        cssProps: {
-            visibleY: true,
-            viewportY: true
-        }
-        });
-
-        Splitting({ target: '.main-heading' });
-        
-
-
-    </script>
+    <!-- Adding the lenis library for smooth scrolling -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script> 
+    <!-- Linking the JS file with the html -->
+    <script src="./JavaScript/Creators.js"></script>
 </body>
+
 <!----------------FOOTER--------------->
 <footer>
 
-    
     <div class="footerpara">
-      <!--Adding the logo of my website-->
+      <!--Adding the logo of the website-->
       <img class="footerlogo" src="./Images/Studio_Ghibli.svg" alt="">
+      <!--Adding a small paragraph-->
       <p class="paraa" style="font-size: 18px; width: 55%; color: #fff;">Ghibli: where every frame holds a piece of childhood's essence</p>
     </div>
 
@@ -166,6 +171,7 @@
       </ul>
     </div>
 
+    <!-- Div that contains social media icons imported from font awesome -->
     <div class="social">
         <h3>Visit us at:</h3>
         <ul>
