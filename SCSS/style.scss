@@ -1,0 +1,1207 @@
+// Importing the google fonts used
+@import url("https://fonts.googleapis.com/css2?family=Kalnia:wght@100;200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+// Specifying the main colors that are used throughout the styling
+$mycolor : skyblue;
+$activecolor : rgb(61, 153, 189); 
+$hovercolor : rgb(191, 229, 245);
+
+// General styles for the whole page
+* {
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(237, 237, 237);
+    height: 100%;
+    font-family: Poppins;
+}
+
+/*******************************************************/
+/******************** HEADER STYLES ********************/
+/*******************************************************/
+
+header {
+    position: fixed; // Fixing the navbar
+    top: 0;
+    background-color: $mycolor;
+    width: 100%;
+    height: 100px;
+    display: flex; // Using flexbox for responsiveness
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    border-radius: 0 0 10px 10px; // Adding border-radius
+    margin: 0 auto;
+    z-index: 1000;
+}
+
+// Styles for the logo image
+.logo img{
+    margin: 10px;
+    width: 150px;
+    height: 70px;
+    background-color: $mycolor;
+}
+
+// Making the nav ul display flex
+nav ul {
+    display: flex;
+}
+
+// Styling the nav bar elements
+nav ul li a {
+    color: black;
+    display: block;
+    margin: 0 6px;
+    font-weight: 600;
+    padding: 10px 20px;
+    transition: 0.2s;
+    border-radius: 30px;
+    font-size: 18px;
+    // Adding hover effects
+    &:hover {
+        background-color: $hovercolor;
+    }
+}
+
+// Adding a different color to indicate the active page
+nav ul li a.active {
+    background-color: $activecolor;
+    color: #fff;
+}
+
+nav .logo{
+    display: none;
+}
+
+// The three lines that serve as a menu button to display the nav bar on smaller viewports
+.lines {
+    display: none;
+    height: fit-content;
+    cursor: pointer;
+    padding: 3px 8px;
+    border-radius: 5px;
+    transition: 0.2s;
+
+    &:hover {
+        background: $hovercolor;
+    }
+
+    div {
+        width: 30px;
+        height: 3px;
+        background: rgb(13, 126, 171);
+        margin: 6px 0;
+    }
+}
+
+/*********************************************************/
+/****************** MAIN SECTION STYLES ******************/
+/*********************************************************/
+
+// Styling the first div
+.hero{
+    margin-top: 95px;
+    width: 100%;
+    height: 90vh; // Specifying the height
+    position: relative;
+    display: flex; // Using display flex
+    align-items: center;
+    justify-content: center;
+}
+
+// Styles for the video so that it takes full width of the viewport
+.vid {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1; // Giving it a negative z-index so that it stays behind the side-panel
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // To make sure it doesn't get distorted on smaller screens
+}
+
+// Adding flex direction column to the content div
+.content {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+}
+
+// Styling the side-panel that can be toggled open and close
+.side-panel {
+    width: 0; // Iniatially hiding the side panel
+    z-index: 100; // Making sure it appears on top of the video
+    margin-top: 5%;
+    border-radius: 0 10px 10px 0;
+    overflow: hidden;
+    color: #fff;
+    box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.35);
+    transition: width 0.5s ease-out, opacity 0.5s ease-out; // Adding opacity transition
+    opacity: 0; // Setting the opacity to zero iniatially
+    visibility: hidden; // Hiding it iniatially
+    position: absolute;
+    left: -50%; // Positioning it off the screen iniatially
+    top: 0;
+}
+
+// Opening the side panel
+.side-panel-open .side-panel {
+    width: 55%; // Showing the side panel
+    height: 80%;
+    opacity: 1; // Changing the opacity
+    visibility: visible; // Making it visible
+    left: 0; // Positioning it on the screen
+}
+
+// Styling the toggle button
+.side-panel-toggle {
+    // Setting the width and height
+    width: 46px;
+    height: 70px;
+    display: grid; // Using display grid
+    place-items: center;
+    color: #fff;
+    // Using gradient colors
+    background-image: linear-gradient(to bottom, rgb(17, 115, 154), rgb(77, 163, 197));
+    border: none;
+    border-radius: 0 5px 5px 0;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: left 0.5s ease-out; // Adding transition
+}
+
+.side-panel-open .side-panel-toggle {
+    left: 56.8%; // Moving the button to the center when the side panel is open
+    transform: translateX(-50%) translateY(-50%);
+}
+
+// Iniatially hiding the close arrow button
+.side-panel-toggle .sp-icon-close {
+    display: none;
+}
+
+// Hiding the open arrow button when the side panel is open
+.side-panel-open .sp-icon-open {
+    display: none !important;
+}
+
+// And displaying the close arrow button
+.side-panel-open .sp-icon-close {
+    display: initial !important;
+}
+
+// Adding styles to the logo on the side pael
+.side-logo {
+    background-color: transparent; // Setting the bg to transparent
+    backdrop-filter: blur(6px); // Adding filter blur
+    padding: 12px;
+}
+
+.side-logo img {
+    width: 75%;
+    margin-left: 12%;
+}
+
+// Styles for the info displayed below the logo in the side panel
+.info{
+    font-size: 15px;
+    padding-bottom: 10%;
+    background-image: linear-gradient(to right, rgb(17, 115, 154), rgb(77, 163, 197));
+}
+
+.info p{
+    padding-top: 4%;
+    padding-bottom: 4%;
+    margin-left: 12%;
+    width: 75%;
+}
+
+// Styling the second div of the page
+.collection{
+    display: flex;
+    flex-direction: row;
+    color: #fff;
+    padding-left: 50px;
+    background-color: rgb(7, 84, 114);
+
+    // Styling the child elements of this div
+    h2{
+        margin-top: 6%;
+    }
+
+    p{
+        font-size: 15px;
+        margin-top: 3%;
+        width: 85%;
+    }
+
+    img{
+        width: 50%;
+        height: auto;
+    }
+
+    // Hiding the other images meant for smaller viewports
+    .small{
+        display: none;
+    }
+
+    .exsmall{
+        display: none;
+    }
+}
+
+// Styling the third div
+.movies{
+    padding-top: 60px;
+    background-image: url(../Images/bg.png); // Adding bg image
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+    position: relative;
+}
+
+// Styling the movie posters displayed
+.movie-images{
+    display: flex;
+    flex-wrap: wrap; // Making it responsive
+    align-items: center;
+    justify-content: center;
+
+    // Specifying the dimensions of these images
+    img{
+        width: 210px;
+        height: auto;
+        margin: 30px;
+        border-radius: 15px; 
+        transition: 0.8s;
+        
+        // Adding hover effects 
+        &:hover{
+            transform: scale(1.3);
+            z-index: 2;
+        }
+    }
+}
+
+// Styling the button that leads to the movies page
+.movies button{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+    margin-top: 40px;
+    border: 2px solid rgb(0, 155, 101);
+    border-radius: 5px;
+    box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.45);
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.8s; // Adding transition
+
+    a{
+        color: rgb(2, 118, 77);
+        padding: 14px 20px;
+        margin: auto;
+        font-size: 18px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        transition: 0.8s;
+
+        // Adding hover effects
+        &:hover{
+            color: #fff;
+        }
+    }
+
+    // Adding hover effects
+    &:hover{
+        background: rgb(0, 155, 101);
+        box-shadow: 12px 12px 5px rgba(0, 0, 0, 0.46);
+        padding: 6px 12px;
+        font-size: 19px;
+        transition: 0.8s;
+    }
+}
+
+// Specifying position and dimensions for the last image of this div
+.totoros{
+    text-align: center;
+    margin-top: 20px;
+
+    img{
+        width: 250px;
+        height: auto;        
+    }
+}
+
+// Styling the fourth div that displays latest news
+.media{
+    padding: 60px;
+    padding-bottom: 60px;
+    // Using linear gradient for the bg color
+    background-image: linear-gradient(to bottom, rgb(7, 84, 114), rgb(77, 163, 197), rgb(7, 84, 114));
+
+    // Styling the child elements of this div separately
+    h2{
+        color: #fff;
+        margin-bottom: 20px;
+        font-size: 30px;
+        font-weight: 600;
+    }
+
+    // Specifying the thickness of the horizontal line
+    hr{
+        height: 5px;
+        background-color: #fff;
+        border-radius: 6px;
+    }
+
+    // Specifying position and dimensions for the last image of this div
+    .boat{
+        width: 450px;
+        height: auto;
+        margin-left: 50%;
+        margin-top: 6%;
+        transition: 3s;
+
+        &:hover{
+            transform: scale(1.2);
+            z-index: 2;
+            margin-left: 15%;
+        }
+    }
+
+    // Styles for the button
+    .view_news{
+        margin: auto;
+        margin-top: 40px;
+        display: flex;
+        flex-direction: row;
+        padding: 15px 25px;
+        margin-top: 40px;
+        color: rgb(2, 118, 77);
+        border: 2px solid rgb(0, 155, 101);
+        border-radius: 5px;
+        box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.45);
+        letter-spacing: 2px;
+        cursor: pointer;
+        transition: 0.8s;
+        font-size: 20px;
+        font-weight: 500;
+
+        // Hover effects on the button
+        &:hover{
+            color: #fff;
+            font-size: 30px;
+            background: rgb(0, 155, 101);
+            box-shadow: 12px 12px 5px rgba(0, 0, 0, 0.46);
+            padding: 20px 30px;
+            font-size: 19px;
+            transition: 0.8s;
+        }
+    }
+}
+
+// Styling the div that contains images of latest news
+.main2{
+    padding: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.content2 {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    transform-style: preserve-3d;
+    animation: animate 30s linear infinite; // Adding animation
+    margin: 30px;
+}
+
+// Code snippet taken from the youtube channel "Online Tutorials"
+// Using keyframes to add animations
+@keyframes animate {
+    0%{
+      transform: perspective(1000px) rotateY(0deg);
+    }
+  
+    100%{
+      transform: perspective(1000px) rotateY(-370deg);
+    }
+}
+  
+.content2 span{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transform-style: preserve-3d;
+    transform-origin: center;
+    transform: rotateY(calc(var(--i)*45deg)) translateZ(370px); // Adding rotating effect
+}
+  
+.content2 span img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 20px;
+    transition: 1.5s; // Adding transition
+  
+    &:hover{
+      transform: translateY(30px) scale(1.2); // Increasing the scale upon hover
+      cursor: pointer;
+    }
+}
+
+/***********************************************************/
+/********************** FOOTER STYLES **********************/
+/***********************************************************/
+
+footer{
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    // Adding gradient bg colors
+    background: linear-gradient(to right, $activecolor, $mycolor);
+    overflow: hidden;
+}
+
+// Specifying dimensions for the logo placed in the footer
+.footerlogo{
+    width: 200px;
+    height: 100px;
+    margin-top: 35px;
+    margin-left: 60px;
+}
+
+// Styling the about section and it's child elements
+.about_section{
+    h2{
+        position: absolute;
+        top: 20%;
+        left: 38%;
+        color: white;
+        font-size: 26px;
+        font-weight: 500;
+
+        span{
+            display: none; // Hiding it for large viewports
+        }
+    }
+
+    ul{
+        position: absolute;
+        top: 35%;
+        left: 38%;
+        color: white;
+        font-size: 16px;
+        line-height: 1.6; // Adding line-height
+    }
+}
+
+// Styling the info section and it's child elements
+.info_section{
+    h2{
+        position: absolute;
+        top: 20%;
+        left: 52%;
+        color: white;
+        font-size: 26px;
+        font-weight: 500;
+
+        span{
+            display: none; // Hiding it for large viewports
+        }
+    }
+
+    ul{
+        position: absolute;
+        top: 35%;
+        left: 52%;
+        color: white;
+        font-size: 16px;
+        line-height: 1.6; // Adding line-height
+    }
+}
+
+// Adding hover effects with transition
+.footer_list_items{
+    transition: 0.8s;
+
+    &:hover{
+        color: black;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+// Styling the social media icons
+.social{
+    h3{
+        font-size: 26px;
+        position: absolute;
+        top: 24%;
+        left: 77%;
+        font-weight: 500;
+    }
+
+    ul{
+        position: absolute;
+        top: 40%;
+        left: 80%;
+        padding: 0;
+        margin: 0;
+        transform: translate(-50%, -50%);
+        display: flex;
+
+        li{
+            margin: 0 35px; // Adding matgin between them
+
+            // Styes for the icons
+            .fa{
+                font-size: 26px;
+                line-height: 56px;
+                transition: 0.6s;
+                color: #000;
+
+                // Adding hover effects
+                &:hover{
+                    color: #fff;
+                }
+            }
+
+            a{
+                position: absolute;
+                display: block;
+                width: 55px;
+                height: 55px;
+                border-radius: 50%; // Shaping it to be circle
+                background-color: #fff;
+                text-align: center;
+                transition: 0.6s;
+                // Adding a shadow beneath
+                box-shadow: 0 5px 4px rgba(0, 0, 0, 0.5);
+
+                &:hover{
+                    transform: translate(0, -10px);
+                }
+            }
+        }
+
+        // Adding bg colors upon hover according to the social media icon
+        li:nth-child(1) a:hover{
+            background-color: #1362ca;
+        }
+
+        li:nth-child(2) a:hover{
+            background-color: #1DA1F2;
+        }
+
+        li:nth-child(3) a:hover{
+            background-color: #ec4765;
+        }
+
+        li:nth-child(4) a:hover{
+            background-color: #0A66C2;
+        }
+
+        li:nth-child(5) a:hover{
+            background-color: #000;
+        }
+    }
+}
+
+/*This is the CSS for the wavy animation at the end*/
+/*Using a background image and positioning it accordingly while adding the respective effects needed*/
+footer .air{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background: url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png);
+    background-size: 1000px 100px
+}
+
+/*There are a total of four waves and they are arranged seperately*/
+/*They all have different z-indexes, opacities, animation time-delay and positions*/
+footer .air.air1{
+    animation: wave 30s linear infinite;
+    z-index: 1000;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0;
+}
+
+footer .air.air2{
+    animation: wave2 15s linear infinite;
+    z-index: 999;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 10px;
+}
+
+footer .air.air3{
+    animation: wave 30s linear infinite;
+    z-index: 998;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 15px;
+}
+
+footer .air.air4{
+    animation: wave2 5s linear infinite;
+    z-index: 997;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom: 20px;
+}
+
+/*Adding the necessary keyframes for the animation*/
+@keyframes wave{
+0%{
+  background-position-x: 0px; 
+}
+100%{
+  background-position-x: 1000px; 
+}
+}
+@keyframes wave2{
+0%{
+  background-position-x: 0px; 
+}
+100%{
+  background-position-x: -1000px; 
+}
+}
+
+/************************************************************************/
+/***************************** MEDIA QUERIES ****************************/
+/************************** FOR RESPONSIVENESS **************************/
+/************************************************************************/
+
+@media screen and (max-width: 768px) {
+    .media {
+        padding: 40px;
+        
+        // Decreasing the size of the image
+        .boat{
+            width: 370px;
+            height: auto;
+            margin-left: 33%;
+            margin-top: 4%;
+        }
+    }
+
+    .content2 span img{
+        width: 70%;
+        height: 70%;
+    }
+
+    .content2 span{
+        transform: rotateY(calc(var(--i)*45deg)) translateZ(270px);
+    }
+
+    .main2{
+        padding-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 1580px) {
+    .side-panel-open .side-panel{
+        width: 65%;
+    }
+
+    .side-panel-open .side-panel-toggle {
+        left: 66.8%;
+    }
+
+    .hero{
+        margin-top: 75px;
+    }
+}
+
+@media screen and (max-width: 1190px) {
+    .collection{
+        .big{
+            display: none;
+        }
+
+        .small{
+            display: block;
+            object-fit: cover;
+        }
+
+        p{
+            width: 80%;
+        }
+    }
+}
+
+@media screen and (max-width: 1000px){
+    header {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    nav {
+        position: absolute;
+        left: -300px;
+        top: 0;
+        z-index: 99;
+        width: 280px;
+        height: 100vh;
+        background-color: $mycolor;
+        transition: 0.2s;
+        box-shadow: 2px 0 20px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    #check_nav:checked ~ nav {
+        left: 0;
+    }
+
+    nav .logo {
+        display: block;
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+    }
+
+    nav ul {
+        display: block;
+        padding: 0 5px;
+        margin-top: 50px;
+    }
+
+    nav ul li a {
+        margin-bottom: 20px;
+        padding: 15px 25px;
+        border-radius: 5px;
+    }
+
+    .lines {
+        display: block;
+    }
+
+    .side-panel-open .side-panel{
+        width: 70%;
+        margin-top: 10%;
+    }
+
+    .side-panel-open .side-panel-toggle {
+        left: 71.8%;
+    }
+
+    .hero{
+        margin-top: 75px;
+    }
+
+    .collection{
+        p{
+            width: 85%;
+            padding-bottom: 35px;
+        }
+
+        .small{
+            display: none;
+        }
+
+        .exsmall{
+            display: block;
+        }
+
+        .written-info{
+            margin-top: 10px;
+        }
+    }
+
+    .info{
+        padding-top: 45px;
+    }
+
+    .media .boat{
+        width: 350px;
+        margin-top: 10%;
+    }
+
+    .social{
+        h3{
+            font-size: 21px;
+            top: 60%;
+            left: 44%;
+        }
+    
+        ul{
+            top: 70%;
+            left: 47%;
+    
+            li{    
+                .fa{
+                    font-size: 25px;
+                    line-height: 55px;
+                }
+    
+                a{
+                    width: 55px;
+                    height: 55px;
+                }
+            }
+        }
+    }
+
+    .about_section{
+        h2{
+            top: 16%;
+            left: 47%;
+        }
+    
+        ul{
+            top: 26%;
+            left: 47%;
+        }
+    }
+    
+    .info_section{
+        h2{
+            top: 16%;
+            left: 70%;
+        }
+    
+        ul{
+            top: 26%;
+            left: 70%;
+        }
+    }
+}
+
+@media screen and (max-width: 600px){
+    .side-panel-open .side-panel{
+        width: 95%;
+        margin-top: 18%;
+    }
+
+    .side-panel-open .side-panel-toggle {
+        left: 96.8%;
+    }
+
+    .hero{
+        margin-top: 75px;
+    }
+
+    .info{
+        padding-top: 37px;
+        padding-bottom: 52px;
+    }
+
+    .collection{
+        .exsmall{
+            display: none;
+        }
+
+        background-image: url(../Images/plswork.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        object-fit: cover;
+
+        .written-info{
+            display: block;
+            border: 1px solid white;
+            padding-left: 20px;
+            border-radius: 10px 0 0 10px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            background-image: transparent;
+            backdrop-filter: blur(7px);
+
+            p{
+                width: 88%;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .media {
+        padding: 35px;
+        
+        .boat{
+            width: 350px;
+            height: auto;
+            margin-left: 31%;
+            margin-top: 4%;
+        }
+    }
+
+    .content2 span img{
+        width: 60%;
+        height: 60%;
+    }
+
+    .content2 span{
+        transform: rotateY(calc(var(--i)*45deg)) translateZ(210px);
+    }
+
+    .main2{
+        padding-bottom: 10px;
+    }
+
+    .footerlogo{
+        width: 160px;
+        height: 75px;
+        margin-left: 30px;
+        margin-top: 20px;
+    }
+
+    .social{
+        h3{
+            font-size: 18px;
+            top: 56%;
+            left: 40%;
+        }
+    
+        ul{
+            top: 66%;
+            left: 44%;
+    
+            li{    
+                .fa{
+                    font-size: 20px;
+                    line-height: 50px;
+                }
+    
+                a{
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+        }
+    }
+
+    .about_section{
+        h2{
+            top: 32%;
+            left: 10%;
+            font-size: 21px;
+
+            span{
+                display: inline;
+                margin-left: 235px;
+            }
+        }
+    
+        ul{
+            display: none;
+        }
+    }
+    
+    .info_section{
+        h2{
+            top: 42%;
+            left: 10%;
+            font-size: 21px;
+
+            span{
+                display: inline;
+                margin-left: 175px;
+            }
+        }
+    
+        ul{
+            display: none;
+        }
+    } 
+
+    .footerpara{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .media {
+        padding: 35px;
+        
+        .boat{
+            width: 300px;
+            height: auto;
+            margin-left: 22%;
+            margin-top: 3%;
+        }
+    }
+
+    .content2 span img{
+        width: 100%;
+        height: 60%;
+    }
+
+    .content2 span{
+        transform: rotateY(calc(var(--i)*45deg)) translateZ(150px);
+    }
+
+    .main2{
+        padding-bottom: 10px;
+        padding-top: 40px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .media {
+        padding: 30px;
+        
+        .boat{
+            width: 225px;
+            height: auto;
+            margin-left: 20%;
+        }
+
+        h2{
+            font-size: 25px;
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+
+        hr{
+            height: 4px;
+        }
+    }
+
+    .content2 span img{
+        width: 100%;
+        height: 50%;
+    }
+
+    .content2 span{
+        transform: rotateY(calc(var(--i)*45deg)) translateZ(130px);
+    }
+
+    .main2{
+        padding: 85px;
+        padding-top: 50px;
+        padding-bottom: 6px;
+    }
+
+    .content2{
+        height: 200px;
+    }
+
+    .media .view_news{
+        margin-top: 0px;
+        font-size: 17px;
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .main2{
+        padding: 55px;
+        padding-top: 50px;
+        padding-bottom: 3px;
+    }
+
+    .written-info {
+        p {
+            font-size: 13px;
+            font-weight: 200;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+    }
+
+    .info {
+        padding-top: 25px;
+    }
+
+    .info p{
+        font-size: 12px;
+    }
+
+    .media .view_news{
+        margin-top: 0px;
+        font-size: 17px;
+        margin-bottom: 30px;
+    }
+
+    .content2{
+        height: 200px;
+    }
+
+    header{
+        padding: 0 14px;
+    }
+
+    footer{
+        height: 75vh;
+    }
+
+    .about_section{
+        h2{
+            font-size: 17px;
+
+            span{
+                margin-left: 175px;
+            }
+        }
+    
+        ul{
+            display: none;
+        }
+    }
+    
+    .info_section{
+        h2{
+            font-size: 17px;
+
+            span{
+                margin-left: 127px;
+            }
+        }
+    
+        ul{
+            display: none;
+        }
+    } 
+
+    .social{
+        h3{
+            font-size: 17px;
+            top: 56%;
+            left: 40%;
+        }
+    
+        ul{
+            top: 66%;
+            left: 44%;
+    
+            li{    
+                margin: 0 28px;
+
+                .fa{
+                    font-size: 20px;
+                    line-height: 46px;
+                }
+    
+                a{
+                    width: 45px;
+                    height: 45px;
+                }
+            }
+        }
+    }
+}
