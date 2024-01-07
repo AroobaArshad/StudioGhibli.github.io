@@ -1,15 +1,17 @@
-// Get all the images within the slideshow container
+// Getting images inside the slideshow container
 const slides = document.querySelectorAll('.slideshow-container img');
 let currentSlideIndex = 0;
 
-// Function to show the next slide
+// Function that proceeds to the next slide
 function showNextSlide() {
+    // Using display none on the current slide
     slides[currentSlideIndex].style.display = 'none';
     currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+    // And using display block on the next slide
     slides[currentSlideIndex].style.display = 'block';
 }
 
-// Automatically transition to the next slide every 5 seconds (adjust as needed)
+// Transitioning to the next slide in every 4 seconds
 setInterval(showNextSlide, 4000);
 
 // Basic setup for the lenis smooth scrolling library
@@ -27,10 +29,10 @@ requestAnimationFrame(raf)
 
 requestAnimationFrame(raf)
 
-// Clear the container before adding your own images
+// Getting the empty container to add images
 document.querySelector(".container").innerHTML = '';
 
-// Array of image URLs
+// Creating an array of image URLs
 const imageUrls = [
 './Images/Characters/toto1.png',
 './Images/Characters/toto2.png',
@@ -65,17 +67,18 @@ const imageUrls = [
 ];
 
 var fragment = document.createDocumentFragment();
-// Loop through your image URLs and create div elements with your images
+
+// Looping through the image URLs and creating div elements with the images
 for (var i = 0; i < imageUrls.length; i++) {
 var photo = document.createElement("div");
 photo.setAttribute('data-scroll', '');
-photo.style.backgroundImage = `url(${imageUrls[i]})`; // Set the background image
+photo.style.backgroundImage = `url(${imageUrls[i]})`; // Setting the background image
 fragment.appendChild(photo);
 }
 
 document.querySelector(".container").appendChild(fragment);
 
-// ScrollOut initialization
+// ScrollOut library initialization
 ScrollOut({
 threshhold: 0.5,
 cssProps: {
