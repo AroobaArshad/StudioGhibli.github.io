@@ -1,10 +1,11 @@
+// Importing the google fonts used
 @import url("https://fonts.googleapis.com/css2?family=Kalnia:wght@100;200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+// Specifying the main colors that are used throughout the styling
 $mycolor : skyblue;
 $activecolor : rgb(61, 153, 189); 
 $hovercolor : rgb(191, 229, 245);
 
-//font-family: 'Caveat', cursive;
-
+// General styles for the whole page
 * {
     margin: 0;
     list-style: none;
@@ -22,20 +23,25 @@ body {
     font-family: Poppins;
 }
 
+/*******************************************************/
+/******************** HEADER STYLES ********************/
+/*******************************************************/
+
 .navbar {
     top: 0;
     background-color: $mycolor;
     width: 100%;
     height: 100px;
-    display: flex;
+    display: flex; // Using flexbox for responsiveness
     align-items: center;
     justify-content: space-between;
     padding: 0 40px;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px; // Adding border-radius
     margin: 0 auto;
     z-index: 1000;
 }
 
+// Styles for the logo image
 .logo img{
     margin: 10px;
     width: 150px;
@@ -47,6 +53,7 @@ nav ul {
     display: flex;
 }
 
+// Styling the nav bar elements
 nav ul li a {
     color: black;
     display: block;
@@ -56,11 +63,13 @@ nav ul li a {
     transition: 0.2s;
     border-radius: 30px;
     font-size: 18px;
+    // Adding hover effects
     &:hover {
         background-color: $hovercolor;
     }
 }
 
+// Adding a different color to indicate the active page
 nav ul li a.active {
     background-color: $activecolor;
     color: #fff;
@@ -70,6 +79,7 @@ nav .logo{
     display: none;
 }
 
+// The three lines that serve as a menu button to display the nav bar on smaller viewports
 .lines {
     display: none;
     height: fit-content;
@@ -90,10 +100,15 @@ nav .logo{
     }
 }
 
+/*********************************************************/
+/****************** MAIN SECTION STYLES ******************/
+/*********************************************************/
+
 main {
     margin-top: 40px;
 }
 
+// Styling the div that contains the heading
 .intro {
     justify-content: center;
     text-align: center;
@@ -108,34 +123,40 @@ main {
     text-transform: uppercase;
 }
 
+// Styling the first line of the heading
 .text-1 {
     font-size: 40px;
     font-weight: 500;
     letter-spacing: 2px;
     background: whitesmoke;
     position: relative;
+    // Adding animation that we'll create later
     animation: text 3s 1;
     margin-bottom: 5px;
     text-shadow: 0px 1px 0 rgba(0, 0, 0, 1), 0px 2px 0 rgba(0, 0, 0, 1), 0px 3px 0 rgba(0, 0, 0, 1),
     0px 4px 0 rgba(0, 0, 0, 1), 0px 12px 5px rgba(0, 0, 0, .3),
 }
 
+// Styling the second line of the heading
 .text-2 {
     font-size: 38px;
     font-weight: 500;
-    opacity: 0;
-    transform: translateY(100%);
+    opacity: 0; // Iniatially hiding the second line
+    transform: translateY(100%); 
+    // Adding animation created using keyframes
     animation: slideDownText 1s 2s forwards ease-out; 
     text-shadow: 0px 1px 0 rgba(0, 0, 0, 1), 0px 2px 0 rgba(0, 0, 0, 1), 0px 3px 0 rgba(0, 0, 0, 1),
     0px 4px 0 rgba(0, 0, 0, 1), 0px 12px 5px rgba(0, 0, 0, .3),
 }
 
+// Animation for first line of heading
 @keyframes text {
     0% {
         color: black;
         margin-bottom: -94px;
     }
 
+    // Increasing and decreasing letter-spacing to animate the text
     30% {
         letter-spacing: 10px;
         margin-bottom: -94px;
@@ -147,6 +168,7 @@ main {
     }
 }
 
+// Animation for second line of heading
 @keyframes slideDownText {
     0% {
         opacity: 0;
@@ -154,11 +176,12 @@ main {
     }
 
     100% {
-        opacity: 1;
-        transform: translateY(0);
+        opacity: 1; // Increasing the opacity
+        transform: translateY(0); // Properly positioning the second line
     }
 }
 
+// Styling the main section
 .main-section{
     --scroll-length: 1.5;
     height: calc( var(--scroll-length) * 100vh );
@@ -172,6 +195,7 @@ main {
     }
 }
 
+// Styling the picture element
 .fig {
     width: 100%;
     max-width: 100%;
@@ -181,6 +205,7 @@ main {
     display: block;
     overflow: hidden;
   
+    // Styling the images
     > img { // 🥕
       display: block;
       width: 100%;
@@ -214,26 +239,7 @@ main {
     }
 }
 
-picture {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-
-    img {
-        display: block;
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-    }
-}
-
-.imgg {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
+// Styling the content div
 .content {
     position: absolute;
     top: 0;
@@ -252,7 +258,7 @@ picture {
     }
   
     > .content-header {
-      grid-row: 1 / 2;
+      grid-row: 1 / 2; // Using grid layout rows
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -277,18 +283,23 @@ picture {
 }
 
 .fig {
+    // Defining a variable --scale using calc() based on scroll-length and visible-y
     --scale: calc(.8 + 
     (.2 * var(--scroll-length) * var(--visible-y))
     );
+    // Setting position to sticky at the top left corner of the container
     position: sticky;
     top: 0;
     left: 0;
     margin: 0;
     display: block; 
     overflow: hidden;
+    // Optimizing for smooth animations
     will-change: transform;
+    // Scaling the element based on the value of --scale
     transform: scale(var(--scale));
 
+    // Styling before pseudo-element 
     &:before {
         content: '';
         position: absolute;
@@ -297,6 +308,7 @@ picture {
         width: 100%;
         height: 100%;
         z-index: 1;
+        // Setting a black background color with some transparency based on visible-y
         background-color: rgba(black, 1);
         opacity: calc( var(--visible-y) );
     }
@@ -304,12 +316,14 @@ picture {
     > img {
         display: block;
         will-change: transform;
+        // Inverting the scaling applied to the parent .fig element
         transform: scale(calc(1 / var(--scale)));
     }
 }
 
 .char {
     display: inline-block;
+    // Adjusting the opacity based on a complex calc() function
     opacity: calc( 
       1 + ( 
         ( var(--viewport-y) * 1.5 )
@@ -318,6 +332,7 @@ picture {
     );
 }
 
+// Global styles for all elements, including pseudo-elements
 *,
 *:before,
 *:after {
@@ -329,10 +344,11 @@ picture {
   font-weight: 700;
 }
 
-/************************************/
-/*********Styling the Footer*********/
-/************************************/
+/***********************************************************/
+/********************** FOOTER STYLES **********************/
+/***********************************************************/
 
+// General styling for the footer
 footer{
     margin-top: 60px;
     position: relative;
@@ -340,19 +356,21 @@ footer{
     height: 60vh;
     background: linear-gradient(to right, $activecolor, $mycolor);
     overflow: hidden;
-    position: relative; /* Ensure it's positioned relative to its normal flow */
-    display: flex; /* Use flexbox for layout */
-    justify-content: space-around; /* Adjust as needed */
-    align-items: center; /* Adjust as needed */
+    position: relative;
+    display: flex; // Using flexbox
+    justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap;
 }
 
+// Size of the logo in the footer
 .footerlogo{
     width: 200px;
     height: 100px;
     margin-bottom: 15px;
 }
 
+// Styling the about section and it's child elements
 .about_section{
     h2{
         position: absolute;
@@ -377,6 +395,7 @@ footer{
     }
 }
 
+// Styling the info section and it's child elements
 .info_section{
     h2{
         position: absolute;
@@ -401,6 +420,7 @@ footer{
     }
 }
 
+// Adding hover effects
 .weee{
     transition: 0.8s;
 
@@ -415,6 +435,7 @@ footer{
     bottom: 10%;
 }
 
+// Styling the social media icons
 .social{
     h3{
         font-size: 23px;
@@ -494,6 +515,7 @@ footer .social {
     margin: 20px;
 }
 
+// Adding display flex
 footer .social {
     display: flex;
     justify-content: center;
@@ -564,7 +586,13 @@ footer .air.air4{
 }
 }
 
+/************************************************************************/
+/***************************** MEDIA QUERIES ****************************/
+/************************** FOR RESPONSIVENESS **************************/
+/************************************************************************/
 
+
+/* Media Queries for viewport width upto 1000px */
 @media screen and (max-width: 1000px){
     header {
         width: 100%;
@@ -671,6 +699,7 @@ footer .air.air4{
     }
 }
 
+/* Media Queries for viewport width upto 800px */
 @media screen and (max-width: 800px){
     .text-1{
         font-size: 34px;
@@ -761,6 +790,7 @@ footer .air.air4{
     }
 }
 
+/* Media Queries for viewport width upto 440px */
 @media screen and (max-width: 440px){
     .navbar{
         padding: 0 18px;
@@ -780,6 +810,7 @@ footer .air.air4{
     }
 }
 
+/* Media Queries for viewport width upto 340px */
 @media screen and (max-width: 340px){
     .text-1{
         font-size: 24px;

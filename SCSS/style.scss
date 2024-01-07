@@ -572,7 +572,7 @@ footer{
         display: flex;
 
         li{
-            margin: 0 35px; // Adding matgin between them
+            margin: 0 35px; // Adding margin between them
 
             // Styes for the icons
             .fa{
@@ -697,6 +697,8 @@ footer .air.air4{
 /************************** FOR RESPONSIVENESS **************************/
 /************************************************************************/
 
+
+/* Media Queries for viewport width upto 768px */
 @media screen and (max-width: 768px) {
     .media {
         padding: 40px;
@@ -724,6 +726,7 @@ footer .air.air4{
     }
 }
 
+/* Media Queries for viewport width upto 1580px */
 @media screen and (max-width: 1580px) {
     .side-panel-open .side-panel{
         width: 65%;
@@ -738,6 +741,7 @@ footer .air.air4{
     }
 }
 
+/* Media Queries for viewport width upto 1190px */
 @media screen and (max-width: 1190px) {
     .collection{
         .big{
@@ -745,6 +749,7 @@ footer .air.air4{
         }
 
         .small{
+            // Changing images according to viewport
             display: block;
             object-fit: cover;
         }
@@ -755,6 +760,7 @@ footer .air.air4{
     }
 }
 
+/* Media Queries for viewport width upto 1000px */
 @media screen and (max-width: 1000px){
     header {
         width: 100%;
@@ -797,6 +803,7 @@ footer .air.air4{
     }
 
     .lines {
+        // Nav bar menu for smaller screens
         display: block;
     }
 
@@ -820,10 +827,12 @@ footer .air.air4{
         }
 
         .small{
+            // Hiding the image meant for larger viewports
             display: none;
         }
 
         .exsmall{
+            // Displaying the smaller image
             display: block;
         }
 
@@ -843,6 +852,7 @@ footer .air.air4{
 
     .social{
         h3{
+            // making adjustments accordingly
             font-size: 21px;
             top: 60%;
             left: 44%;
@@ -891,6 +901,7 @@ footer .air.air4{
     }
 }
 
+/* Media Queries for viewport width upto 600px */
 @media screen and (max-width: 600px){
     .side-panel-open .side-panel{
         width: 95%;
@@ -915,6 +926,7 @@ footer .air.air4{
             display: none;
         }
 
+        // Adding a bg image that is only meant for mobile sized devices
         background-image: url(../Images/plswork.png);
         background-repeat: no-repeat;
         background-size: cover;
@@ -1032,6 +1044,7 @@ footer .air.air4{
     }
 }
 
+/* Media Queries for viewport width upto 450px */
 @media screen and (max-width: 450px) {
     .media {
         padding: 35px;
@@ -1059,6 +1072,7 @@ footer .air.air4{
     }
 }
 
+/* Media Queries for viewport width upto 380px */
 @media screen and (max-width: 380px) {
     .media {
         padding: 30px;
@@ -1106,6 +1120,7 @@ footer .air.air4{
     }
 }
 
+/* Media Queries for viewport width upto 340px */
 @media screen and (max-width: 340px) {
     .main2{
         padding: 55px;

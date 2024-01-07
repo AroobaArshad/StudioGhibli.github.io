@@ -16,6 +16,9 @@ body {
   font-family: Poppins;
 }
 
+/*******************************************************/
+/******************** HEADER STYLES ********************/
+/*******************************************************/
 .navbar {
   top: 0;
   background-color: skyblue;
@@ -83,6 +86,9 @@ nav .logo {
   margin: 6px 0;
 }
 
+/*********************************************************/
+/****************** MAIN SECTION STYLES ******************/
+/*********************************************************/
 main {
   margin-top: 40px;
 }
@@ -201,27 +207,6 @@ main {
      object-fit: cover;
 }
 
-picture {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-}
-picture img {
-  display: block;
-  width: 100%;
-  height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.imgg {
-  width: 100%;
-  height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
 .content {
   position: absolute;
   top: 0;
@@ -307,9 +292,9 @@ picture img {
   font-weight: 700;
 }
 
-/************************************/
-/*********Styling the Footer*********/
-/************************************/
+/***********************************************************/
+/********************** FOOTER STYLES **********************/
+/***********************************************************/
 footer {
   margin-top: 60px;
   position: relative;
@@ -317,10 +302,10 @@ footer {
   height: 60vh;
   background: linear-gradient(to right, rgb(61, 153, 189), skyblue);
   overflow: hidden;
-  position: relative; /* Ensure it's positioned relative to its normal flow */
-  display: flex; /* Use flexbox for layout */
-  justify-content: space-around; /* Adjust as needed */
-  align-items: center; /* Adjust as needed */
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   flex-wrap: wrap;
 }
 
@@ -518,6 +503,11 @@ footer .air.air4 {
     background-position-x: -1000px;
   }
 }
+/************************************************************************/
+/***************************** MEDIA QUERIES ****************************/
+/************************** FOR RESPONSIVENESS **************************/
+/************************************************************************/
+/* Media Queries for viewport width upto 1000px */
 @media screen and (max-width: 1000px) {
   header {
     width: 100%;
@@ -599,6 +589,7 @@ footer .air.air4 {
     bottom: 22%;
   }
 }
+/* Media Queries for viewport width upto 800px */
 @media screen and (max-width: 800px) {
   .text-1 {
     font-size: 34px;
@@ -665,6 +656,7 @@ footer .air.air4 {
     bottom: 32%;
   }
 }
+/* Media Queries for viewport width upto 440px */
 @media screen and (max-width: 440px) {
   .navbar {
     padding: 0 18px;
@@ -680,6 +672,7 @@ footer .air.air4 {
     height: 200px;
   }
 }
+/* Media Queries for viewport width upto 340px */
 @media screen and (max-width: 340px) {
   .text-1 {
     font-size: 24px;

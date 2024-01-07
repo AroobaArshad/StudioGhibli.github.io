@@ -594,6 +594,7 @@ footer .air.air4 {
 /***************************** MEDIA QUERIES ****************************/
 /************************** FOR RESPONSIVENESS **************************/
 /************************************************************************/
+/* Media Queries for viewport width upto 768px */
 @media screen and (max-width: 768px) {
   .media {
     padding: 40px;
@@ -615,6 +616,7 @@ footer .air.air4 {
     padding-bottom: 10px;
   }
 }
+/* Media Queries for viewport width upto 1580px */
 @media screen and (max-width: 1580px) {
   .side-panel-open .side-panel {
     width: 65%;
@@ -626,6 +628,7 @@ footer .air.air4 {
     margin-top: 75px;
   }
 }
+/* Media Queries for viewport width upto 1190px */
 @media screen and (max-width: 1190px) {
   .collection .big {
     display: none;
@@ -639,6 +642,7 @@ footer .air.air4 {
     width: 80%;
   }
 }
+/* Media Queries for viewport width upto 1000px */
 @media screen and (max-width: 1000px) {
   header {
     width: 100%;
@@ -741,6 +745,7 @@ footer .air.air4 {
     left: 70%;
   }
 }
+/* Media Queries for viewport width upto 600px */
 @media screen and (max-width: 600px) {
   .side-panel-open .side-panel {
     width: 95%;
@@ -851,6 +856,7 @@ footer .air.air4 {
     display: none;
   }
 }
+/* Media Queries for viewport width upto 450px */
 @media screen and (max-width: 450px) {
   .media {
     padding: 35px;
@@ -873,6 +879,7 @@ footer .air.air4 {
     padding-top: 40px;
   }
 }
+/* Media Queries for viewport width upto 380px */
 @media screen and (max-width: 380px) {
   .media {
     padding: 30px;
@@ -911,6 +918,7 @@ footer .air.air4 {
     margin-bottom: 30px;
   }
 }
+/* Media Queries for viewport width upto 340px */
 @media screen and (max-width: 340px) {
   .main2 {
     padding: 55px;

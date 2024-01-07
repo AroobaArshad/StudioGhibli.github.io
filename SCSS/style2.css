@@ -13,6 +13,9 @@ body {
   font-family: Poppins;
 }
 
+/*******************************************************/
+/******************** HEADER STYLES ********************/
+/*******************************************************/
 header {
   position: fixed;
   top: 0;
@@ -81,45 +84,11 @@ nav .logo {
   margin: 6px 0;
 }
 
-@media screen and (max-width: 1000px) {
-  header {
-    width: 100%;
-    padding: 0 20px;
-  }
-  nav {
-    position: absolute;
-    left: -300px;
-    top: 0;
-    z-index: 99;
-    width: 280px;
-    height: 100vh;
-    background-color: skyblue;
-    transition: 0.2s;
-    box-shadow: 2px 0 20px 0 rgba(0, 0, 0, 0.05);
-  }
-  #check_nav:checked ~ nav {
-    left: 0;
-  }
-  nav .logo {
-    display: block;
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
-  }
-  nav ul {
-    display: block;
-    padding: 0 5px;
-    margin-top: 50px;
-  }
-  nav ul li a {
-    margin-bottom: 20px;
-    padding: 15px 25px;
-    border-radius: 5px;
-  }
-  .lines {
-    display: block;
-  }
-}
+/*********************************************************/
+/****************** MAIN SECTION STYLES ******************/
+/*********************************************************/
+/* This code snippet of a slider has been taken from a youtube video
+that has been uploaded by the channel Lun Dev */
 .slider {
   height: 90vh;
   position: relative;
@@ -278,7 +247,7 @@ nav .logo {
   letter-spacing: 6px;
   font-family: kalnia;
   font-weight: 500;
-  text-shadow: 0px 1px 0 rgb(216, 213, 213), 0px 12px 5px rgba(0, 0, 0, 0.3);
+  text-shadow: 0px -1px 0 rgb(213, 213, 213), 0px -2px 0 rgb(213, 213, 213), 0px 11px 5px rgba(0, 0, 0, 0.3);
 }
 
 .movies {
@@ -345,12 +314,15 @@ nav .logo {
   border: none;
   cursor: pointer;
   width: 110px;
+  transition: 0.5s;
 }
 .movie-btn:hover {
   background: rgb(61, 153, 189);
   color: #fff;
 }
 
+/* Styling the second main section of the page that
+displays top ghibli music scores */
 .music {
   margin-top: 0px;
   width: 100%;
@@ -362,7 +334,7 @@ nav .logo {
 .music h2 {
   margin: 60px;
   text-align: center;
-  text-shadow: 0px 1px 0 rgb(216, 213, 213), 0px 11px 5px rgba(0, 0, 0, 0.3);
+  text-shadow: 0px -1px 0 rgb(213, 213, 213), 0px -2px 0 rgb(213, 213, 213), 0px 11px 5px rgba(0, 0, 0, 0.3);
 }
 .music button {
   font-size: 24px;
@@ -460,9 +432,9 @@ audio {
   width: 244px;
 }
 
-/************************************/
-/*********Styling the Footer*********/
-/************************************/
+/***********************************************************/
+/********************** FOOTER STYLES **********************/
+/***********************************************************/
 footer {
   position: relative;
   width: 100%;
@@ -518,17 +490,17 @@ footer {
   line-height: 1.6;
 }
 
-.weee {
+.footer_list_items {
   transition: 0.8s;
 }
-.weee:hover {
+.footer_list_items:hover {
   color: black;
   text-decoration: underline;
   cursor: pointer;
 }
 
 .social h3 {
-  font-size: 23px;
+  font-size: 26px;
   position: absolute;
   top: 24%;
   left: 77%;
@@ -586,7 +558,7 @@ footer {
 }
 
 /*This is the CSS for the wavy animation at the end*/
-/*I have used a background image and positioned it accordingly while adding the respective effects needed*/
+/*Using a background image and positioning it accordingly while adding the respective effects needed*/
 footer .air {
   position: absolute;
   bottom: 0;
@@ -648,7 +620,49 @@ footer .air.air4 {
     background-position-x: -1000px;
   }
 }
+/************************************************************************/
+/***************************** MEDIA QUERIES ****************************/
+/************************** FOR RESPONSIVENESS **************************/
+/************************************************************************/
+/* Media Queries for viewport width upto 1000px */
 @media screen and (max-width: 1000px) {
+  header {
+    width: 100%;
+    padding: 0 20px;
+  }
+  nav {
+    position: absolute;
+    left: -300px;
+    top: 0;
+    z-index: 99;
+    width: 280px;
+    height: 100vh;
+    background-color: skyblue;
+    transition: 0.2s;
+    box-shadow: 2px 0 20px 0 rgba(0, 0, 0, 0.05);
+  }
+  #check_nav:checked ~ nav {
+    left: 0;
+  }
+  nav .logo {
+    display: block;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+  }
+  nav ul {
+    display: block;
+    padding: 0 5px;
+    margin-top: 50px;
+  }
+  nav ul li a {
+    margin-bottom: 20px;
+    padding: 15px 25px;
+    border-radius: 5px;
+  }
+  .lines {
+    display: block;
+  }
   .social h3 {
     font-size: 21px;
     top: 60%;
@@ -694,6 +708,7 @@ footer .air.air4 {
     font-size: 22px;
   }
 }
+/* Media Queries for viewport width upto 680px */
 @media screen and (max-width: 680px) {
   .slides {
     justify-content: start;
@@ -793,6 +808,7 @@ footer .air.air4 {
     width: 130px;
   }
 }
+/* Media Queries for viewport width upto 380px */
 @media screen and (max-width: 380px) {
   .music h2 {
     font-size: 26px;
@@ -802,6 +818,7 @@ footer .air.air4 {
     border-radius: 0;
   }
 }
+/* Media Queries for viewport width upto 330px */
 @media screen and (max-width: 330px) {
   .slides .item {
     width: 100px;

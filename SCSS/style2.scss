@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Kalnia:wght@100;200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+// Importing the google fonts used
+@import url("https://fonts.googleapis.com/css2?family=Kalnia:wght@100;200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+// Specifying the main colors that are used throughout the styling
 $mycolor : skyblue;
 $activecolor : rgb(61, 153, 189); 
 $hovercolor : rgb(191, 229, 245);
 
-//font-family: 'Rubik doodle shadow', cursive;
-//font-family: 'Caveat', cursive;
-
+// General styles for the whole page
 * {
     margin: 0;
     list-style: none;
@@ -20,21 +20,26 @@ body {
     font-family: Poppins;
 }
 
+/*******************************************************/
+/******************** HEADER STYLES ********************/
+/*******************************************************/
+
 header {
-    position: fixed;
+    position: fixed; // Fixing the navbar
     top: 0;
     background-color: $mycolor;
     width: 100%;
     height: 100px;
-    display: flex;
+    display: flex; // Using flexbox for responsiveness
     align-items: center;
     justify-content: space-between;
     padding: 0 40px;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px; // Adding border-radius
     margin: 0 auto;
     z-index: 1000;
 }
 
+// Styles for the logo image
 .logo img{
     margin: 10px;
     width: 150px;
@@ -42,10 +47,12 @@ header {
     background-color: $mycolor;
 }
 
+// Making the nav ul display flex
 nav ul {
     display: flex;
 }
 
+// Styling the nav bar elements
 nav ul li a {
     color: black;
     display: block;
@@ -55,11 +62,13 @@ nav ul li a {
     transition: 0.2s;
     border-radius: 30px;
     font-size: 18px;
+    // Adding hover effects
     &:hover {
         background-color: $hovercolor;
     }
 }
 
+// Adding a different color to indicate the active page
 nav ul li a.active {
     background-color: $activecolor;
     color: #fff;
@@ -69,6 +78,7 @@ nav .logo{
     display: none;
 }
 
+// The three lines that serve as a menu button to display the nav bar on smaller viewports
 .lines {
     display: none;
     height: fit-content;
@@ -89,53 +99,14 @@ nav .logo{
     }
 }
 
-@media screen and (max-width: 1000px){
-    header {
-        width: 100%;
-        padding: 0 20px;
-    }
+/*********************************************************/
+/****************** MAIN SECTION STYLES ******************/
+/*********************************************************/
 
-    nav {
-        position: absolute;
-        left: -300px;
-        top: 0;
-        z-index: 99;
-        width: 280px;
-        height: 100vh;
-        background-color: $mycolor;
-        transition: 0.2s;
-        box-shadow: 2px 0 20px 0 rgba(0, 0, 0, 0.05);
-    }
+/* This code snippet of a slider has been taken from a youtube video
+that has been uploaded by the channel Lun Dev */
 
-    #check_nav:checked ~ nav {
-        left: 0;
-    }
-
-    nav .logo {
-        display: block;
-        display: flex;
-        align-items: center;
-        margin-left: 10px;
-    }
-
-    nav ul {
-        display: block;
-        padding: 0 5px;
-        margin-top: 50px;
-    }
-
-    nav ul li a {
-        margin-bottom: 20px;
-        padding: 15px 25px;
-        border-radius: 5px;
-    }
-
-    .lines {
-        display: block;
-    }
-
-}
-
+// Styles for the slider of top movies at the top of the page
 .slider {
     height: 90vh;
     position: relative;
@@ -146,10 +117,11 @@ nav .logo{
     position: absolute;
     inset: 0 0 0 0;
     overflow: hidden;
-    opacity: 0;
-    transition: .8s ease-in-out;
+    opacity: 0; // Hiding them iniatially
+    transition: .8s ease-in-out; // Adding transition for smooth effects
 }
 
+// Making sure the images are not distorted
 .slider .list .item img{
     width: 100%;
     height: 100%;
@@ -165,9 +137,10 @@ nav .logo{
     bottom: 0;
     background-image: linear-gradient(
         to top, #000 40%, transparent
-    );
+    ); // Using linear gradient property
 }
 
+// Positioning the written content
 .slider .list .item .content {
     position: absolute;
     left: 10%;
@@ -178,12 +151,14 @@ nav .logo{
     color: #fff;
 }
 
+// Styling the first element inside the content div
 .slider .list .item .content p:nth-child(1) {
     text-transform: uppercase;
     letter-spacing: 8px;
     line-height: 1.6;
 }
 
+// Styling the heading inside the content div
 .slider .list .item .content h2{
     font-size: 55px;
     margin: 0;
@@ -192,35 +167,40 @@ nav .logo{
 }
 
 .slider .list .item.active {
-    opacity: 1;
+    opacity: 1; // Displaying the div
     z-index: 10;
 }
 
+// Creating an animation for the text
 @keyframes showContent {
     to {
-        transform: translateY(0);
-        filter: blur(0);
+        transform: translateY(0); // Changing the position of the text vertically
+        filter: blur(0); // Removing blur on the text after it appears
         opacity: 1;
     }
 }
 
+// Adding the animation created on all child elements of the content div
 .slider .list .item.active p:nth-child(1),
 .slider .list .item.active h2,
 .slider .list .item.active p:nth-child(3){
-    transform: translateY(40px);
-    filter: blur(20px);
-    opacity: 0;
+    transform: translateY(40px); // Iniatially positioning the text downwards
+    filter: blur(20px); // Iniatially blurring the text
+    opacity: 0; // Setting the opacity to 0 iniatially
     animation: showContent .7s .9s ease-in-out 1 forwards;
 }
 
+// Adding animation delay on the heading of the content div
 .slider .list .item.active h2 {
     animation-delay: 1.2s;
 }
 
+// Increasing the animation duration on the paragraph of content div
 .slider .list .item.active p:nth-child(3) {
     animation-duration: 1.5s;
 }
 
+// Styling the toggle buttons
 .btn {
     position: absolute;
     top: 30%;
@@ -245,6 +225,7 @@ nav .logo{
     }
 }
 
+// Styling the slides that contain movie posters
 .slides {
     position: absolute;
     bottom: 6%;
@@ -266,8 +247,10 @@ nav .logo{
 .slides .item {
     width: 170px;
     height: 240px;
+    // Decreasing brightness of the posters that are inactive
     filter: brightness(.5);
-    transition: .5s;
+    transition: .5s; // Adding transition
+    // Setting the flex-shrink to 0
     flex-shrink: 0;
 }
 
@@ -278,10 +261,12 @@ nav .logo{
     border-radius: 10px;
 }
 
+// Increasing brightness of the poster that is active
 .slides .item.active {
     filter: brightness(1.3);
 }
 
+// Styling the second section of the page
 .display {
     padding-top: 45px;
     padding-bottom: 65px;
@@ -289,6 +274,7 @@ nav .logo{
     background: $hovercolor;
 }
 
+// Styling the heading text that has animation
 .reveal-type {
     font-size: 50px;
     text-align: center;
@@ -296,16 +282,19 @@ nav .logo{
     letter-spacing: 6px;
     font-family: kalnia;
     font-weight: 500;
-    text-shadow: 0px 1px 0 rgb(216, 213, 213),
-    0px 12px 5px rgba(0, 0, 0, .3),
+    // Adding text-shadow effect
+    text-shadow: 0px -1px 0 rgb(213, 213, 213), 0px -2px 0 rgb(213, 213, 213),
+    0px 11px 5px rgba(0, 0, 0, .3),
 }
 
+// Styling the div that contains the movies displayed
 .movies {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
+// Styling the poster cards
 .movie-card {
     width: 250px;
     height: 390px;
@@ -326,6 +315,7 @@ nav .logo{
     border-radius: 15px;
 }
 
+// Styling the written content that appears on hover
 .card-content {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 100%;
@@ -334,7 +324,7 @@ nav .logo{
     right: -100%;
     position: absolute;
     background: #1f3d4738;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px); // Blurring the bg
     border-radius: 15px;
     color: #fff;
     padding: 25px;
@@ -344,6 +334,7 @@ nav .logo{
     transition: 1.5s;
 }
 
+// Styling the child elements of card-content
 .movie-name {
     font-size: 30px;
     color: #fff;
@@ -363,6 +354,7 @@ nav .logo{
     border: none;
     cursor: pointer;
     width: 110px;
+    transition: 0.5s;
 
     &:hover{
         background: $activecolor;
@@ -370,21 +362,26 @@ nav .logo{
     }
 }
 
+/* Styling the second main section of the page that
+displays top ghibli music scores */
 .music{
     margin-top: 0px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    // Setting the bg to a linear gradient
     background-image: linear-gradient(to bottom, rgb(191, 229, 245), skyblue);
 
     h2{
         margin: 60px;
         text-align: center;
-        text-shadow: 0px 1px 0 rgb(216, 213, 213),
+        // Adding text-shadow to the heading
+        text-shadow: 0px -1px 0 rgb(213, 213, 213), 0px -2px 0 rgb(213, 213, 213),
         0px 11px 5px rgba(0, 0, 0, .3),
     }
 
+    // Styling the button
     button {
         font-size: 24px;
         letter-spacing: 1px;
@@ -397,6 +394,7 @@ nav .logo{
         margin-bottom: 30px;
         margin-top: 30px;
 
+        // Adding hover effects
         &:hover{
             color: #fff;
             transition: 1s;
@@ -407,12 +405,14 @@ nav .logo{
     }
 }
 
+// Specifying dimensions of the image above the footer
 .ex{
     width: 170px;
     height: auto;
     margin-top: 30px;
 }
 
+// Styling the containers of ghibli scores
 .score1{
     display: flex;
     width: 67%;
@@ -421,6 +421,7 @@ nav .logo{
     margin-bottom: 50px;
     box-shadow: -8px 8px 6px rgba(0, 0, 0, 0.35);
 
+    // Specifying the dimensions of the image inside the div
     img{
         margin: 20px;
         width: 210px;
@@ -435,6 +436,7 @@ nav .logo{
         }
     }
 
+    // Styling the written content inside the div
     .cont{
         margin-top: 12px;
         padding: 20px;
@@ -449,6 +451,7 @@ nav .logo{
     }
 }
 
+// Similarly styling the other container
 .score2{
     display: flex;
     width: 67%;
@@ -485,24 +488,27 @@ nav .logo{
     }
 }
 
+// Styling the video controls
 audio{
     margin-top: 20px;
     height: 40px;
     width: 244px;
 }
 
-/************************************/
-/*********Styling the Footer*********/
-/************************************/
+/***********************************************************/
+/********************** FOOTER STYLES **********************/
+/***********************************************************/
 
 footer{
     position: relative;
     width: 100%;
     height: 50vh;
+    // Adding gradient bg colors
     background: linear-gradient(to right, $activecolor, $mycolor);
     overflow: hidden;
 }
 
+// Specifying dimensions for the logo placed in the footer
 .footerlogo{
     width: 200px;
     height: 100px;
@@ -510,6 +516,7 @@ footer{
     margin-left: 60px;
 }
 
+// Styling the about section and it's child elements
 .about_section{
     h2{
         position: absolute;
@@ -520,7 +527,7 @@ footer{
         font-weight: 500;
 
         span{
-            display: none;
+            display: none; // Hiding it for large viewports
         }
     }
 
@@ -530,10 +537,11 @@ footer{
         left: 38%;
         color: white;
         font-size: 16px;
-        line-height: 1.6;
+        line-height: 1.6; // Adding line-height
     }
 }
 
+// Styling the info section and it's child elements
 .info_section{
     h2{
         position: absolute;
@@ -544,7 +552,7 @@ footer{
         font-weight: 500;
 
         span{
-            display: none;
+            display: none; // Hiding it for large viewports
         }
     }
 
@@ -554,11 +562,12 @@ footer{
         left: 52%;
         color: white;
         font-size: 16px;
-        line-height: 1.6;
+        line-height: 1.6; // Adding line-height
     }
 }
 
-.weee{
+// Adding hover effects with transition
+.footer_list_items{
     transition: 0.8s;
 
     &:hover{
@@ -568,9 +577,10 @@ footer{
     }
 }
 
+// Styling the social media icons
 .social{
     h3{
-        font-size: 23px;
+        font-size: 26px;
         position: absolute;
         top: 24%;
         left: 77%;
@@ -587,14 +597,16 @@ footer{
         display: flex;
 
         li{
-            margin: 0 35px;
+            margin: 0 35px; // Adding matgin between them
 
+            // Styes for the icons
             .fa{
                 font-size: 26px;
                 line-height: 56px;
                 transition: 0.6s;
                 color: #000;
 
+                // Adding hover effects
                 &:hover{
                     color: #fff;
                 }
@@ -605,10 +617,11 @@ footer{
                 display: block;
                 width: 55px;
                 height: 55px;
-                border-radius: 50%;
+                border-radius: 50%; // Shaping it to be circle
                 background-color: #fff;
                 text-align: center;
                 transition: 0.6s;
+                // Adding a shadow beneath
                 box-shadow: 0 5px 4px rgba(0, 0, 0, 0.5);
 
                 &:hover{
@@ -617,6 +630,7 @@ footer{
             }
         }
 
+        // Adding bg colors upon hover according to the social media icon
         li:nth-child(1) a:hover{
             background-color: #1362ca;
         }
@@ -640,7 +654,7 @@ footer{
 }
 
 /*This is the CSS for the wavy animation at the end*/
-/*I have used a background image and positioned it accordingly while adding the respective effects needed*/
+/*Using a background image and positioning it accordingly while adding the respective effects needed*/
 footer .air{
     position: absolute;
     bottom: 0;
@@ -703,7 +717,58 @@ footer .air.air4{
 }
 }
 
+/************************************************************************/
+/***************************** MEDIA QUERIES ****************************/
+/************************** FOR RESPONSIVENESS **************************/
+/************************************************************************/
+
+
+/* Media Queries for viewport width upto 1000px */
 @media screen and (max-width: 1000px){
+    header {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    nav {
+        position: absolute;
+        left: -300px;
+        top: 0;
+        z-index: 99;
+        width: 280px;
+        height: 100vh;
+        background-color: $mycolor;
+        transition: 0.2s;
+        box-shadow: 2px 0 20px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    #check_nav:checked ~ nav {
+        left: 0;
+    }
+
+    nav .logo {
+        display: block;
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+    }
+
+    nav ul {
+        display: block;
+        padding: 0 5px;
+        margin-top: 50px;
+    }
+
+    nav ul li a {
+        margin-bottom: 20px;
+        padding: 15px 25px;
+        border-radius: 5px;
+    }
+
+    .lines {
+        display: block;
+    }
+
     .social{
         h3{
             font-size: 21px;
@@ -768,6 +833,7 @@ footer .air.air4{
     }
 }
 
+/* Media Queries for viewport width upto 680px */
 @media screen and (max-width: 680px) {
     .slides {
         justify-content: start;
@@ -900,6 +966,7 @@ footer .air.air4{
     }
 }
 
+/* Media Queries for viewport width upto 380px */
 @media screen and (max-width: 380px){
     .music h2{
         font-size: 26px;
@@ -911,6 +978,7 @@ footer .air.air4{
     }
 }
 
+/* Media Queries for viewport width upto 330px */
 @media screen and (max-width: 330px){
     .slides .item{
         width: 100px;

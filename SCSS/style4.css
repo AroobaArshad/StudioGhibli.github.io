@@ -20,7 +20,12 @@ body {
   font-family: Poppins;
 }
 
+/*******************************************************/
+/******************** HEADER STYLES ********************/
+/*******************************************************/
 header {
+  position: fixed;
+  top: 0;
   background-color: skyblue;
   width: 100%;
   height: 100px;
@@ -86,45 +91,13 @@ nav .logo {
   margin: 6px 0;
 }
 
-@media screen and (max-width: 1000px) {
-  header {
-    width: 100%;
-    padding: 0 20px;
-  }
-  nav {
-    position: absolute;
-    left: -300px;
-    top: 0;
-    z-index: 99;
-    width: 280px;
-    height: 100vh;
-    background-color: skyblue;
-    transition: 0.2s;
-    box-shadow: 2px 0 20px 0 rgba(0, 0, 0, 0.05);
-  }
-  #check_nav:checked ~ nav {
-    left: 0;
-  }
-  nav .logo {
-    display: block;
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
-  }
-  nav ul {
-    display: block;
-    padding: 0 5px;
-    margin-top: 50px;
-  }
-  nav ul li a {
-    margin-bottom: 20px;
-    padding: 15px 25px;
-    border-radius: 5px;
-  }
-  .lines {
-    display: block;
-  }
+/*********************************************************/
+/****************** MAIN SECTION STYLES ******************/
+/*********************************************************/
+.slideshow-container {
+  margin-top: 80px;
 }
+
 .slideshow-container img {
   display: none;
 }
@@ -155,8 +128,8 @@ img {
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
-  max-width: 1000px; /* Set a maximum width for the gallery */
-  padding: 20px; /* Add some padding around the gallery */
+  max-width: 1000px;
+  padding: 20px;
 }
 
 [data-scroll] {
@@ -167,7 +140,7 @@ img {
   border-radius: 6px;
   width: calc(33.333% - 20px);
   height: 0;
-  padding-top: calc(33.333% - 20px); /* Maintain a square aspect ratio */
+  padding-top: calc(33.333% - 20px);
   margin: 10px;
   will-change: transform;
   opacity: 1;
@@ -187,10 +160,10 @@ img {
   margin-top: 50px;
   margin-left: 10%;
   margin-bottom: 0;
-  animation: walk 11s infinite;
+  animation: walking 11s infinite;
 }
 
-@keyframes walk {
+@keyframes walking {
   0% {
     transform: translateX(0);
   }
@@ -225,9 +198,9 @@ img {
     transform: translateX(0);
   }
 }
-/************************************/
-/*********Styling the Footer*********/
-/************************************/
+/***********************************************************/
+/********************** FOOTER STYLES **********************/
+/***********************************************************/
 footer {
   position: relative;
   width: 100%;
@@ -284,10 +257,10 @@ footer {
   line-height: 1.6;
 }
 
-.weee {
+.footer_list_items {
   transition: 0.8s;
 }
-.weee:hover {
+.footer_list_items:hover {
   color: black;
   text-decoration: underline;
   cursor: pointer;
@@ -414,7 +387,49 @@ footer .air.air4 {
     background-position-x: -1000px;
   }
 }
+/************************************************************************/
+/***************************** MEDIA QUERIES ****************************/
+/************************** FOR RESPONSIVENESS **************************/
+/************************************************************************/
+/* Media Queries for viewport width upto 1000px */
 @media screen and (max-width: 1000px) {
+  header {
+    width: 100%;
+    padding: 0 20px;
+  }
+  nav {
+    position: absolute;
+    left: -300px;
+    top: 0;
+    z-index: 99;
+    width: 280px;
+    height: 100vh;
+    background-color: skyblue;
+    transition: 0.2s;
+    box-shadow: 2px 0 20px 0 rgba(0, 0, 0, 0.05);
+  }
+  #check_nav:checked ~ nav {
+    left: 0;
+  }
+  nav .logo {
+    display: block;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+  }
+  nav ul {
+    display: block;
+    padding: 0 5px;
+    margin-top: 50px;
+  }
+  nav ul li a {
+    margin-bottom: 20px;
+    padding: 15px 25px;
+    border-radius: 5px;
+  }
+  .lines {
+    display: block;
+  }
   .social h3 {
     font-size: 21px;
     top: 60%;
@@ -450,9 +465,9 @@ footer .air.air4 {
   }
   .gif1 {
     margin-left: 4%;
-    animation: walk 6s infinite;
+    animation: walking 6s infinite;
   }
-  @keyframes walk {
+  @keyframes walking {
     0% {
       transform: translateX(0);
     }
@@ -488,14 +503,14 @@ footer .air.air4 {
     }
   }
 }
-/* Responsive styles for smaller screens */
+/* Media Queries for viewport width upto 760px */
 @media screen and (max-width: 760px) {
   .container {
-    padding: 10px; /* Adjust padding for smaller screens */
+    padding: 10px;
   }
   [data-scroll] {
-    width: calc(50% - 20px); /* Two columns on smaller screens */
-    padding-top: calc(50% - 20px); /* Maintain square aspect ratio */
+    width: calc(50% - 20px);
+    padding-top: calc(50% - 20px);
   }
   .char-heading h1 {
     font-size: 55px;
@@ -551,10 +566,11 @@ footer .air.air4 {
     display: none;
   }
 }
+/* Media Queries for viewport width upto 480px */
 @media screen and (max-width: 480px) {
   [data-scroll] {
-    width: calc(100% - 20px); /* Single column on even smaller screens */
-    padding-top: calc(100% - 20px); /* Maintain square aspect ratio */
+    width: calc(100% - 20px);
+    padding-top: calc(100% - 20px);
   }
   .navbar {
     padding: 0 18px;
@@ -566,9 +582,9 @@ footer .air.air4 {
   .gif1 {
     width: 135px;
     margin-left: 3%;
-    animation: walk 5s infinite;
+    animation: walking 5s infinite;
   }
-  @keyframes walk {
+  @keyframes walking {
     0% {
       transform: translateX(0);
     }
@@ -604,12 +620,14 @@ footer .air.air4 {
     }
   }
 }
+/* Media Queries for viewport width upto 380px */
 @media screen and (max-width: 380px) {
   .char-heading h1 {
     font-size: 35px;
     font-weight: 410;
   }
 }
+/* Media Queries for viewport width upto 340px */
 @media screen and (max-width: 340px) {
   .navbar {
     padding: 0 14px;
@@ -665,9 +683,9 @@ footer .air.air4 {
   .gif1 {
     width: 110px;
     margin-left: 2%;
-    animation: walk 4s infinite;
+    animation: walking 4s infinite;
   }
-  @keyframes walk {
+  @keyframes walking {
     0% {
       transform: translateX(0);
     }
