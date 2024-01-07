@@ -14,17 +14,19 @@ requestAnimationFrame(raf)
 requestAnimationFrame(raf)
 
 document.addEventListener("DOMContentLoaded", function() {
-    // Initially hiding the side panel
+    // Hiding the side panel initially
     document.querySelector(".hero").classList.remove("side-panel-open");
 
-    // Toggle side panel and icon
+    // Functionality to toggle the side panel
     document.querySelector(".side-panel-toggle").addEventListener("click", function() {
         const hero = document.querySelector(".hero");
         hero.classList.toggle("side-panel-open");
 
-        // Toggle between close/open icons
+        // Functionality to toggle between open and close icons
         const openIcon = document.querySelector(".sp-icon-open");
         const closeIcon = document.querySelector(".sp-icon-close");
+
+        // Setting display property for the open and close icons based on the side panel state
         openIcon.style.display = hero.classList.contains("side-panel-open") ? "none" : "initial";
         closeIcon.style.display = hero.classList.contains("side-panel-open") ? "initial" : "none";
     });
