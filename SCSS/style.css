@@ -114,8 +114,6 @@ nav .logo {
   height: 90vh;
 }
 
-/* ... Your existing CSS code ... */
-/* Styles for the loader */
 .loader {
   position: absolute;
   top: 0;
@@ -336,6 +334,19 @@ nav .logo {
   height: auto;
 }
 
+.head1 {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1%;
+  margin-top: 2%;
+}
+.head1 img {
+  width: 110px;
+  height: auto;
+  margin-top: -4%;
+  margin-left: 2%;
+}
+
 .media {
   padding: 60px;
   padding-bottom: 60px;
@@ -343,8 +354,7 @@ nav .logo {
 }
 .media h2 {
   color: #fff;
-  margin-bottom: 20px;
-  font-size: 30px;
+  font-size: 35px;
   font-weight: 600;
 }
 .media hr {
@@ -782,6 +792,10 @@ footer .air.air4 {
     top: 26%;
     left: 70%;
   }
+  .head1 img {
+    margin-top: -5%;
+    width: 100px;
+  }
 }
 /* Media Queries for viewport width upto 600px */
 @media screen and (max-width: 600px) {
@@ -900,10 +914,10 @@ footer .air.air4 {
     padding: 35px;
   }
   .media .boat {
-    width: 300px;
+    width: 260px;
     height: auto;
     margin-left: 22%;
-    margin-top: 3%;
+    margin-top: 15%;
   }
   .content2 span img {
     width: 100%;
@@ -915,6 +929,16 @@ footer .air.air4 {
   .main2 {
     padding-bottom: 10px;
     padding-top: 40px;
+  }
+  .media h2 {
+    font-size: 28px;
+  }
+  .head1 img {
+    width: 80px;
+    margin-top: -9%;
+  }
+  .media .view_news {
+    margin-top: -4%;
   }
 }
 /* Media Queries for viewport width upto 380px */
@@ -951,7 +975,7 @@ footer .air.air4 {
     height: 200px;
   }
   .media .view_news {
-    margin-top: 0px;
+    margin-top: -12%;
     font-size: 17px;
     margin-bottom: 30px;
   }
@@ -977,8 +1001,8 @@ footer .air.air4 {
     font-size: 12px;
   }
   .media .view_news {
-    margin-top: 0px;
-    font-size: 17px;
+    margin-top: -12%;
+    font-size: 15px;
     margin-bottom: 30px;
   }
   .content2 {
