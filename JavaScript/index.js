@@ -31,3 +31,19 @@ document.addEventListener("DOMContentLoaded", function() {
         closeIcon.style.display = hero.classList.contains("side-panel-open") ? "initial" : "none";
     });
 });
+
+// Wait for the DOM content to be loaded
+document.addEventListener('DOMContentLoaded', function() {
+    const video = document.querySelector('.vid');
+    const loader = document.getElementById('loader');
+
+    // When the video starts loading, show the loader
+    video.addEventListener('loadstart', function() {
+        loader.parentNode.classList.remove('loaded');
+    });
+
+    // When the video is loaded, hide the loader
+    video.addEventListener('loadeddata', function() {
+        loader.parentNode.classList.add('loaded');
+    });
+});
