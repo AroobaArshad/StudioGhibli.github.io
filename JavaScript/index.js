@@ -14,12 +14,12 @@ requestAnimationFrame(raf)
 requestAnimationFrame(raf)
 
 document.addEventListener("DOMContentLoaded", function() {
-    // Hiding the side panel initially
-    document.querySelector(".hero").classList.remove("side-panel-open");
+    // Displaying the side panel initially with the close arrow button
+    const hero = document.querySelector(".hero");
+    hero.classList.add("side-panel-open");
 
     // Functionality to toggle the side panel
     document.querySelector(".side-panel-toggle").addEventListener("click", function() {
-        const hero = document.querySelector(".hero");
         hero.classList.toggle("side-panel-open");
 
         // Functionality to toggle between open and close icons
@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
         closeIcon.style.display = hero.classList.contains("side-panel-open") ? "initial" : "none";
     });
 });
+
 
 // Wait for the DOM content to be loaded
 document.addEventListener('DOMContentLoaded', function() {
