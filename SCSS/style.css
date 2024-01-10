@@ -730,11 +730,11 @@ footer .air.air4 {
     display: block;
   }
   .side-panel-open .side-panel {
-    width: 70%;
+    width: 80%;
     margin-top: 10%;
   }
   .side-panel-open .side-panel-toggle {
-    left: 71.8%;
+    left: 81.8%;
   }
   .hero {
     margin-top: 75px;
@@ -800,11 +800,11 @@ footer .air.air4 {
 /* Media Queries for viewport width upto 600px */
 @media screen and (max-width: 600px) {
   .side-panel-open .side-panel {
-    width: 95%;
+    width: 90%;
     margin-top: 18%;
   }
   .side-panel-open .side-panel-toggle {
-    left: 96.8%;
+    left: 92.8%;
   }
   .hero {
     margin-top: 75px;
