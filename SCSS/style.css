@@ -1052,4 +1052,11 @@ footer .air.air4 {
     width: 45px;
     height: 45px;
   }
+  .side-panel-open .side-panel {
+    width: 89%;
+    margin-top: 18%;
+  }
+  .side-panel-open .side-panel-toggle {
+    left: 93%;
+  }
 }/*# sourceMappingURL=style.css.map */
